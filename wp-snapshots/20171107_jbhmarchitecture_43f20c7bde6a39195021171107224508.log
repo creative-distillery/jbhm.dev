@@ -1,0 +1,79 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: November 7, 2017 10:45 pm
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.2.28
+WORDPRESS:	4.8.3
+PHP INFO:	7.1.8 | SAPI: apache2handler
+SERVER:		Apache/2.2.32 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.1.8 mod_ssl/2.2.32 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 2048M (128M default) 
+MEMORY STACK: 20MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported 
+TABLES: total:13 | filtered:0 | create:13 
+FILTERED: [] 
+SQL CREATED: 20171107_jbhmarchitecture_43f20c7bde6a39195021171107224508_database.sql 
+SQL FILE SIZE: 685.35KB (701803) 
+SQL FILE TIME: 2017-11-07 22:45:31 
+SQL RUNTIME: 0.23 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  /Users/willfalcon/Documents/Sites/jbhm.dev 
+ARCHIVE FILE: 20171107_jbhmarchitecture_43f20c7bde6a39195021171107224508_archive.zip 
+FILTERS: *OFF* 
+DIRS:
+	not set 
+FILES:
+	not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	79.22MB 
+STATS:	Dirs 237 | Files 2,287 
+SQL ADDED: 20171107_jbhmarchitecture_43f20c7bde6a39195021171107224508_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 2524
+    [filename] => /Users/willfalcon/Documents/Sites/jbhm.dev/wp-snapshots/tmp/20171107_jbhmarchitecture_43f20c7bde6a39195021171107224508_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 55.85MB 
+ARCHIVE RUNTIME: 10.32 sec. 
+MEMORY STACK: 20MB 
+
+******************************************************************************** 
+MAKE INSTALLER: 
+******************************************************************************** 
+Build Start 
+Build Finished 
+Preping for use 
+PACK SIZE:  
+Template parsed with new data 
+Complete [/Users/willfalcon/Documents/Sites/jbhm.dev/wp-snapshots/tmp/20171107_jbhmarchitecture_43f20c7bde6a39195021171107224508_installer.php] 
+Added to archive 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL File: 685.35KB 
+Installer File: 442.93KB 
+Archive File: 55.85MB  
+
+********************************************************************************
+RECORD ID:[1]
+TOTAL PROCESS RUNTIME: 12.04 sec.
+PEAK PHP MEMORY USED: 22MB
+DONE PROCESSING => 20171107_jbhmarchitecture November 7, 2017 10:45 pm
+ 
