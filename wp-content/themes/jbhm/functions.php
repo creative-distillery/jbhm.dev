@@ -16,6 +16,9 @@
     wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.js', array( 'jquery', 'popper' ), '', true );
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/assets/js/cd.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'masonry', 'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', array( 'jquery' ) );
+  //  wp_enqueue_script( 'focusingly', get_template_directory_uri() . '/assets/js/focusingly.min.js', '', '', true );
+    // wp_enqueue_script( 'cd_gallery', get_template_directory_uri() . '/assets/js/cd-gallery.js', '', '', true );
+
   }
 
 /* Add Theme Supports */
@@ -64,7 +67,7 @@
   }
 
 /* Include Custom Post Types */
-include_once( get_stylesheet_directory() . '/inc/cpt.php' );
+//include_once( get_stylesheet_directory() . '/inc/cpt.php' );
 
 /* Setup ACF */
 
@@ -87,7 +90,55 @@ include_once( get_stylesheet_directory() . '/inc/cpt.php' );
   // add_filter('acf/settings/show_admin', '__return_false');
 
   include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
+  //
+  // acf_add_options_page();
+  //
+  // include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
-  acf_add_options_page();
 
-  include_once( get_stylesheet_directory() . '/inc/fields.php' );
+
+
+  function round_up($number, $precision = 0) {
+    $fig = (int) str_pad('1', $precision, '0');
+    return (ceil($number * $fig) / $fig);
+  }
+
+  function five_col($i) {
+    while ( $i > 4 ) {
+      $i -= 5;
+    }
+  ;
+    return $i + 1;
+  }
+
+  function four_col($i) {
+    while ( $i > 3 ) {
+      $i -= 4;
+    }
+  ;
+    return $i + 1;
+  }
+
+  function three_col($i) {
+    while ( $i > 2 ) {
+      $i -= 3;
+    }
+  ;
+    return $i + 1;
+  }
+
+  function two_col($i) {
+    while ( $i > 1 ) {
+      $i -= 2;
+    }
+  ;
+    return $i + 1;
+  }
+
+  function one_col($i) {
+    while ( $i > 0 ) {
+      $i -= 1;
+    }
+  ;
+    return $i + 1;
+  }

@@ -6,7 +6,7 @@
 
 <?php endwhile; else: ?>
 
-  <h3 class="mb-4">Sorry, nothing here! index.php</h3>
+  <h3 class="mb-4">Sorry, nothing here!</h3>
 
 <?php endif; ?>
 

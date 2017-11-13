@@ -4,7 +4,7 @@
   // $first_row = $images[0];
   // $first_image = $first_row['img'];
 
-  if ( get_field( 'header_img' ) || ! empty( $first_image ) ) {
+  if ( get_field( 'header_img' ) ) {
     get_header( 'header_img' );
   } else {
     get_header();
@@ -72,39 +72,38 @@
     </div>
   </div><!-- .project-content-wrap -->
 
-    <?php
-      $gallery = get_field( 'gallery' );
-    ?>
+    <?php if ( get_field( 'testimonial_content' ) ) : ?>
 
-    <?php if ( $gallery ) : ?>
-      <div class="row">
-        <div class="col">
-          <div class="cd-gallery">
+      <div class="row cd-testimonial">
+        <div class="col-12">
+          <blockquote class="blockquote">
 
-            <?php foreach( $gallery as $image ) : ?>
 
-              <?php
-                $width = $image['width'];
-                $height = $image['height'];
-              ?>
-              <div class="cd-gallery-item">
-                <img class="img-fluid" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
-              </div>
+            <div class="text-center">
+              <?php the_field( 'testimonial_content' ); ?>
 
-            <?php endforeach; ?>
+              <footer class="blockquote-footer my-3">
+                <?php the_field( 'testimonial_source' ); ?>
+              </footer>
+            </div>
 
-          </div>
+          </blockquote>
         </div>
       </div>
-    <?php endif; ?>
-
-
-    <?php endwhile; else: ?>
-
-      <h3 class="mb-4">Sorry, nothing here!</h3>
 
     <?php endif; ?>
 
+    <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
+      <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous Project' ); ?>
+      <?php next_post_link( '<p class="blog-nav-link">%link</p>', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
+    </div>
 
+    <?php get_template_part( '/inc/gallery', 'project' ); ?>
+
+  <?php endwhile; else: ?>
+
+    <h3 class="mb-4">Sorry, nothing here!</h3>
+
+  <?php endif; ?>
 
 <?php get_footer(); ?>

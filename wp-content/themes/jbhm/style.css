@@ -35,6 +35,10 @@ This theme, like WordPress, is licensed under the GPL.
 /*---------------     General     ---------------*/
 /*-----------------------------------------------*/
 
+
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+
 body {
   width: 100%;
   max-width: 100%;
@@ -64,14 +68,47 @@ a:hover {
   font-style: italic;
 }
 
+/* no grid support? */
+
+.cd-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .cd-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
   grid-gap: 1rem;
+  grid-auto-flow: dense;
+}
+
+.cd-grid-item {
+  /* needed for the flex layout*/
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
 }
 
 .cd-grid-item {
   position: relative;
+}
+/*
+.cd-grid-item-large {
+
+    grid-column-end: span 2;
+    grid-row-end: auto;
+
+}*/
+
+/* set the margin used on flex items to 0 as we have gaps in grid.  */
+
+@supports (display: grid) {
+  .cd-grid > * {
+    margin: 0;
+  }
 }
 
 .cd-grid-item:hover > a > div {
@@ -79,134 +116,106 @@ a:hover {
 }
 
 
+
 /*---------------     Gallery     ---------------*/
 
 .cd-gallery {
-  line-height: 0;
-  -webkit-column-count: 4;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    4;
-  -moz-column-gap:      0px;
-  column-count:         4;
-  column-gap:           0px;
-  width: 830px;
+  width: 900px;
   max-width: 98%;
   margin: 0 auto;
 }
 
-/*.cd-gallery div {
-  width: 100% !important;
-  height: auto !important;
-}*/
 
-.cd-gallery {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
-  /*grid-auto-flow: column;*/
+/* Small screen gallery */
+.grid-sizer,
+.gallery-item {
+  width: 50%;
+  background-color: #fff;
+  border: 0px;
+  cursor: pointer;
 }
 
-.cd-1 {
-  grid-row: span 1;
+.gallery-wide {
+  width: 100%;
 }
 
-.cd-2 {
-  grid-row: span 2;
+.gutter-sizer {
+  width: 2%;
 }
 
-.cd-3 {
-  grid-row: span 3;
+.lightbox-img {
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  /*padding: 15px;*/
+  width: 95%;
 }
 
-.cd-4 {
-  grid-row: span 4;
+
+/* Medium screen gallery */
+@media screen and (min-width: 768px) {
+  .grid-sizer,
+  .gallery-item {
+    width: 33.3%;
+  }
+
+  .gallery-wide {
+    width: 66.6%
+  }
 }
 
-.cd-5 {
-  grid-row: span 5;
+/* Large screen gallery */
+@media screen and (min-width: 992px) {
+  .grid-sizer,
+  .gallery-item {
+    width: 25%;
+  }
+
+  .gallery-wide {
+    width: 50%;
+  }
 }
 
-.cd-6 {
-  grid-row: span 6;
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    margin-top: 5%;
+    max-width: 85%;
+  }
 }
 
-.cd-1-1 {
-  grid-row: span 1;
-  grid-column: span 1;
+.cd-lightbox-header {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: flex-end;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  margin: 15px 0;
+  /*padding: 15px;*/
 }
 
-.cd-1-2 {
-  grid-row: span 1;
-  grid-column: span 2;
+.cd-lightbox-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  outline: 0;
 }
 
-.cd-1-3 {
-  grid-row: span 1;
-  grid-column: span 3;
+.cd-lightbox-img {
+
 }
 
-.cd-1-4 {
-  grid-row: span 1;
-  grid-column: span 4;
-}
 
-.cd-2-1 {
-  grid-row: span 2;
-  grid-column: span 1;
-}
-
-.cd-2-2 {
-  grid-row: span 2;
-  grid-column: span 2;
-}
-
-.cd-2-3 {
-  grid-row: span 2;
-  grid-column: span 3;
-}
-
-.cd-2-4 {
-  grid-row: span 2;
-  grid-column: span 4;
-}
-.cd-3-1 {
-  grid-row: span 3;
-  grid-column: span 1;
-}
-
-.cd-3-2 {
-  grid-row: span 3;
-  grid-column: span 2;
-}
-
-.cd-3-3 {
-  grid-row: span 3;
-  grid-column: span 3;
-}
-
-.cd-3-4 {
-  grid-row: span 3;
-  grid-column: span 4;
-}
-.cd-4-1 {
-  grid-row: span 4;
-  grid-column: span 1;
-}
-
-.cd-4-2 {
-  grid-row: span 4;
-  grid-column: span 2;
-}
-
-.cd-4-3 {
-  grid-row: span 4;
-  grid-column: span 3;
-}
-
-.cd-4-4 {
-  grid-row: span 4;
-  grid-column: span 4;
-}
 
 /*-----------------------------------------------*/
 /*---------------     HEADERS     ---------------*/
@@ -271,6 +280,14 @@ a:hover {
   transform: rotate(90deg);
 }
 
+/*------------------------------------------*/
+/*---------------   Page     ---------------*/
+/*------------------------------------------*/
+
+.page-content {
+  width: 400px;
+  margin: 0 auto;
+}
 
 /*------------------------------------------------*/
 /*---------------     Services     ---------------*/
@@ -329,23 +346,6 @@ a:hover {
   margin-bottom: 0px;
 }
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    margin-top: 100px;
-    max-width: 80%;
-  }
-}
-
-.modal-header {
-  justify-content: flex-end;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.modal-content {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-}
-
 .cd-testimonial {
   width: 700px;
   max-width: 100%;
@@ -365,14 +365,47 @@ a:hover {
 /*------------ Industry Archive Page ------------*/
 /*------------- (page-projects.php) -------------*/
 
+.industry-title-wrap {
+  width: 900px;
+  max-width: 98%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: .75rem;
+}
+
+.industry-title-wrap h2 {
+  font-size: 36px;
+  display: inline;
+}
+.project-grid-item-container {
+  margin: 5px 0;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.project-grid-item-container > a:hover {
+  text-decoration: none;
+}
+
+.project-grid-item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.project-grid-item > a {
+  width: 100%;
+}
+
 .industry-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;
+  bottom: 0;*/
   background-color: rgba(89, 89, 89, .75);
   height: 100%;
   width: 100%;
@@ -381,6 +414,10 @@ a:hover {
   padding: .5rem .25rem;
   opacity: 0;
   transition: opacity .75s;
+}
+
+.project-grid-item:hover div.industry-info {
+  opacity: 1;
 }
 
 .industry-info > h4 {
@@ -392,8 +429,46 @@ a:hover {
 
 .industry-info > p {
   color: white;
-
 }
+
+/*----------   Industry Projects Page   ---------*/
+/*--------   (taxonomy-industries.php)   --------*/
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(89, 89, 89, .75);
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  padding: .5rem .25rem;
+  opacity: 0;
+  transition: opacity .75s;
+  text-align: left;
+}
+
+.gallery-item:hover > div.project-info {
+  opacity: 1;
+}
+div.project-info > div {
+  width: auto;
+}
+div.project-info h4,
+div.project-info h5,
+div.project-info p {
+  color: white;
+  margin-bottom: 0px;
+}
+
+.project-info hr {
+width: 80%;
+}
+
 /*----------------------------------------------*/
 /*---------------     People     ---------------*/
 /*----------------------------------------------*/
@@ -487,7 +562,6 @@ span.award-name {
 
 .person-card-info > hr {
   margin: 0;
-
 }
 
 /*----------------------------------------------*/

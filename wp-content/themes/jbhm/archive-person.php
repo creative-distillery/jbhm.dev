@@ -57,15 +57,13 @@
 
 
     <div class="row">
-      <div class="col">
 
-      <div class="cd-grid">
 
         <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
           <?php $headshot = get_field( 'headshot' ); ?>
 
-          <div class="cd-grid-item">
+          <div class="cd-grid-item col-6 col-md-4 col-lg-3 mb-4">
 
             <a href="<?php the_permalink(); ?>">
 
@@ -91,8 +89,7 @@
     <h3 class="mb-4">Sorry, nothing here!</h3>
 
   <?php endif; ?>
-</div>
-</div>
+
 </div>
 
 <?php get_footer(); ?>

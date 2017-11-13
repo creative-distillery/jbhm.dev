@@ -3,17 +3,12 @@ jQuery(document).ready(function($) {
   $('li.nav-item > a').addClass('nav-link');
   $('#quick_links_wrapper > ul').addClass('list-unstyled');
 
-  // $('#learn_more_link').click(rotateCaret());
-
-  $('.grid').masonry({
-    // options
-    percentPosition: true,
+  var gallery = document.querySelector('.cd-gallery');
+  var masonry = new Masonry(gallery, {
+    itemSelector: '.gallery-item',
     columnWidth: '.grid-sizer',
-    itemSelector: '.grid-item',
-    columnWidth: 200,
-    gutter: 5
+    percentPosition: true,
   });
-
 
 });
 
