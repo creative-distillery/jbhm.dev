@@ -3,8 +3,9 @@
   // $images = get_field( 'photos' );
   // $first_row = $images[0];
   // $first_image = $first_row['img'];
+  $gallery = get_field( 'gallery' );
 
-  if ( get_field( 'header_img' ) ) {
+  if ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
     get_header( 'header_img' );
   } else {
     get_header();

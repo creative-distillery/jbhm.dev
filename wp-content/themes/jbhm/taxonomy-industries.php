@@ -1,7 +1,25 @@
 <?php
 
+
+//TODO: Use smaller image size for thumbnails
+
+
   get_header();
 
+  $az = true;
+  $recent = false;
+
+  if ( isset( $_GET['orderby'] ) ) {
+      switch ( $_GET['orderby'] ) {
+        case 'name':
+          break;
+        case 'date':
+          $filter = 'date';
+          $az = false;
+          $recent = true;
+          break;
+      }
+  }
 ?>
 
 <?php if ( have_posts() ) : ?>
@@ -11,32 +29,37 @@
   <div class="row">
     <div class="industry-title-wrap">
       <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
-      <a class="btn people-filter-btn" href="?orderby=name&order=ASC">A-Z</a>
-      <a class="btn people-filter-btn" href="?orderby=date">Most Recent</a>
+      <a class="btn people-filter-btn<?php if ( $az ) : ?> active-filter<?php endif; ?>" href="?orderby=name&order=ASC">A-Z</a>
+      <a class="btn people-filter-btn<?php if ( $recent ) : ?> active-filter<?php endif; ?>" href="?orderby=date">Most Recent</a>
     </div>
   </div>
 
   <div class="row">
-    <div class="cd-gallery">
+    <div class="industry-gallery">
 
-      <div class="grid-sizer"></div>
+      <div class="industry-grid-sizer"></div>
 
       <?php while ( have_posts() ) : the_post(); ?>
 
         <?php
 
-          $img = get_field( 'header_img' );
+          if ( get_field( 'header_img' ) ) {
+            $img = get_field( 'header_img' );
+          } else {
+            $gallery = get_field( 'gallery' );
+            $img = $gallery[0];
+          }
           $width = $img['width'];
           $height = $img['height'];
           $ratio = $width / $height;
 
         ?>
 
-          <a class="gallery-item<?php if ( $ratio > 1.8 ) : ?> gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>">
+          <a class="industry-gallery-item<?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>">
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
-            <div class="project-info justify-content-between">
+            <div class="project-info">
 
               <div class="text-left w-auto">
                 <h4><?php the_title(); ?></h4>

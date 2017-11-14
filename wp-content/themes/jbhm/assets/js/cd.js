@@ -10,6 +10,27 @@ jQuery(document).ready(function($) {
     percentPosition: true,
   });
 
+
+
+  // var industryGallery = document.querySelector('.industry-gallery');
+  // var industryMasonry = new Masonry(industryGallery, {
+  //   itemSelector: '.industry-gallery-item',
+  //   columnWidth: '.industry-grid-sizer',
+  //   percentPosition: true,
+  //   gutter: 10
+  // });
+
+  var $industryMasonry = $('.industry-gallery').masonry({
+    itemSelector: '.industry-gallery-item',
+    columnWidth: '.industry-grid-sizer',
+    percentPosition: true,
+    gutter: 10
+  });
+
+  $industryMasonry.imagesLoaded().progress( function() {
+    $industryMasonry.masonry('layout');
+  });
+
 });
 
 // document.getElementById('learn_more_link').on

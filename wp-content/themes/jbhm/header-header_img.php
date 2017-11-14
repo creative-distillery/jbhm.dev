@@ -1,22 +1,28 @@
 <?php
 
-  // if ( get_field( 'header_img' ) ) {
+  if ( get_field( 'header_img' ) ) {
 
     $headerImg = get_field( 'header_img' );
+    $headerImg = $headerImg['url'];
     $headerHeight = get_field( 'header_height' );
     $headerHeightCss = 'height: ' . $headerHeight . 'px;';
 
-  // } else {
+  } else {
 
-  //   $images = get_field( 'photos' );
-  //   $first_row = $images[0];
-  //   $headerImg = $first_row['img'];
-  //   $headerHeight = $headerImg['height'];
-  //   $headerHeightCss = 'height: ' . $headerHeight . 'px;
-  //   max-height: 100vh;';
-  // }
-
-  $headerImgCss = 'background: url(' . $headerImg['url'] . ');';
+    $images = get_field( 'gallery' );
+    $firstImg = $images[0];
+    $headerImg = $firstImg['url'];
+    if ( get_field( 'header_height' ) ) {
+      $headerHeight = get_field( 'header_height' );
+    } elseif ( $firstImg['height'] < 450 ) {
+      $headerHeight = $firstImg['height'];
+    } else {
+      $headerHeight = 450;
+    }
+    // max-height: 100vh;';
+  }
+  $headerHeightCss = 'height: ' . $headerHeight . 'px;';
+  $headerImgCss = 'background: url(' . $headerImg . ');';
 
 
  ?>

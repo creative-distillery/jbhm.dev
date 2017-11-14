@@ -125,6 +125,11 @@ a:hover {
   margin: 0 auto;
 }
 
+.industry-gallery {
+  width: 900px;
+  max-width: 98%;
+  margin: 0 auto;
+}
 
 /* Small screen gallery */
 .grid-sizer,
@@ -135,7 +140,17 @@ a:hover {
   cursor: pointer;
 }
 
-.gallery-wide {
+.industry-grid-sizer,
+.industry-gallery-item {
+  width: 49%;
+  background-color: #fff;
+  border: 0px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.gallery-wide,
+.industry-gallery-wide {
   width: 100%;
 }
 
@@ -161,8 +176,17 @@ a:hover {
     width: 33.3%;
   }
 
+.industry-grid-sizer,
+.industry-gallery-item {
+    width: 32.3%;
+  }
+
   .gallery-wide {
     width: 66.6%
+  }
+
+  .industry-gallery-wide {
+    width: 64.6%
   }
 }
 
@@ -173,8 +197,17 @@ a:hover {
     width: 25%;
   }
 
+.industry-grid-sizer,
+.industry-gallery-item {
+    width: 24%;
+  }
+
   .gallery-wide {
     width: 50%;
+  }
+
+  .industry-gallery-wide {
+    width: 49%;
   }
 }
 
@@ -271,6 +304,7 @@ a:hover {
 .home-content-wrap {
   width: 75%;
   margin: 2rem auto;
+  margin-bottom: 0px;
   max-width: 100%;
   text-align: center;
   line-height: 2;
@@ -446,13 +480,15 @@ a:hover {
   width: 100%;
   max-width: 100%;
   color: white;
-  padding: .5rem .25rem;
+  padding: 1.5rem 1rem;
+  padding-bottom: .5rem;
   opacity: 0;
   transition: opacity .75s;
   text-align: left;
 }
 
-.gallery-item:hover > div.project-info {
+.gallery-item:hover > div.project-info,
+.industry-gallery-item:hover > div.project-info {
   opacity: 1;
 }
 div.project-info > div {
