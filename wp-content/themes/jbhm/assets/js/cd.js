@@ -31,6 +31,13 @@ jQuery(document).ready(function($) {
     $industryMasonry.masonry('layout');
   });
 
+  $('.carousel').on('slide.bs.carousel', function () {
+    var height = $('data-height');
+    console.log(height);
+    $('.carousel').css('height', height + 'px' );
+  });
+
+
 });
 
 // document.getElementById('learn_more_link').on

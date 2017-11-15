@@ -3,9 +3,18 @@
   // $images = get_field( 'photos' );
   // $first_row = $images[0];
   // $first_image = $first_row['img'];
-  $gallery = get_field( 'gallery' );
 
-  if ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
+  $gallery = get_field( 'gallery' );
+  $sliders = array();
+  foreach ( $gallery as $image ) {
+    if ( get_field( 'slider', $image['ID'] ) ) {
+      array_push( $sliders, $image );
+    }
+  }
+  if ( ! empty( $sliders ) ) {
+    get_header( 'slider' );
+  }
+  elseif ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
     get_header( 'header_img' );
   } else {
     get_header();
@@ -25,12 +34,14 @@
 
     <div class="row mt-3">
 
-      <div class="col-md-9">
-        <h4 class="accent mb-3">Project Description</h3>
-        <div class="project-description">
-          <?php the_content(); ?>
+      <?php if ( get_the_content() ) : ?>
+        <div class="col-md-9">
+          <h4 class="accent mb-3">Project Description</h3>
+          <div class="project-description">
+            <?php the_content(); ?>
+          </div>
         </div>
-      </div>
+      <?php endif; ?>
 
       <?php $startTails = false; ?>
       <?php if ( have_rows( 'recognition' ) ) : ?>
@@ -94,12 +105,12 @@
 
     <?php endif; ?>
 
+    <?php get_template_part( '/inc/gallery', 'project' ); ?>
+
     <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
       <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous Project' ); ?>
       <?php next_post_link( '<p class="blog-nav-link">%link</p>', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
     </div>
-
-    <?php get_template_part( '/inc/gallery', 'project' ); ?>
 
   <?php endwhile; else: ?>
 

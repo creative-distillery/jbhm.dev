@@ -254,7 +254,15 @@ a:hover {
 /*---------------     HEADERS     ---------------*/
 /*-----------------------------------------------*/
 
+.cd-slider-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
+/*.carousel {
+  height: 100vh;
+}*/
 .cd-nav {
   background-color: #595959;
 }
