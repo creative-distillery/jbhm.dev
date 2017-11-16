@@ -16,10 +16,12 @@
         <nav class="navbar navbar-expand-md cd-nav">
 
           <a class="navbar-brand w-75 mr-auto" href="<?php bloginfo('url'); ?>">
-            <svg height="77" width="140">
-              <line x1="0" y1="15" x2="140" y2="15" class="accent" style="stroke-width:5;" />
-            </svg>
-            <h1>JBHM <span class="architecture">Architecture</span></h1>
+            <?php if ( get_field( 'logo', 'option' ) ) : ?>
+              <?php $logo = get_field( 'logo', 'option' ); ?>
+              <img class="img-fluid cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+            <?php else: ?>
+              <h1><?php bloginfo( 'title' ); ?></h1>
+            <?php endif; ?>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
@@ -43,5 +45,7 @@
 
           </div>
         </nav>
+
+        <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div class="container-fluid">

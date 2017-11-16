@@ -92,7 +92,7 @@
 
   include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
   //
-  // acf_add_options_page();
+  acf_add_options_page();
   //
   // include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
@@ -143,3 +143,5 @@
   ;
     return $i + 1;
   }
+
+  include_once( get_stylesheet_directory() . '/inc/breadcrumbs.php' );

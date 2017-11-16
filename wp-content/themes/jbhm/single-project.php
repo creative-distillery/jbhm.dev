@@ -13,8 +13,7 @@
   }
   if ( ! empty( $sliders ) ) {
     get_header( 'slider' );
-  }
-  elseif ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
+  } elseif ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
     get_header( 'header_img' );
   } else {
     get_header();

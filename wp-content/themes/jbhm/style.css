@@ -20,6 +20,7 @@ This theme, like WordPress, is licensed under the GPL.
   -- General
     -- Gallery
   -- Headers
+    -- Breadcrumbs
   -- Front_Page
   -- Page
   -- Services
@@ -260,9 +261,19 @@ a:hover {
   width: 100%;
 }
 
-/*.carousel {
-  height: 100vh;
-}*/
+.carousel-inner {
+  max-height: 100vh;
+}
+
+.img-slider {
+  height: auto;
+  max-height: 100vh;
+}
+
+.cd-logo {
+  height: 80px;
+}
+
 .cd-nav {
   background-color: #595959;
 }
@@ -304,6 +315,26 @@ a:hover {
   font-size: 26px;
   font-weight: light;
 }
+
+/*---------------    Breadcrumbs     ---------------*/
+#breadcrumbs{
+    list-style:none;
+    margin:10px 0;
+    overflow:hidden;
+}
+
+#breadcrumbs li{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:15px;
+}
+
+#breadcrumbs .separator{
+    font-size:18px;
+    font-weight:100;
+    color:#ccc;
+}
+
 
 /*-------------------------------------------------*/
 /*---------------    Front_Page     ---------------*/
