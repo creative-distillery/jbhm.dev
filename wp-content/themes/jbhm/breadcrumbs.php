@@ -8,6 +8,7 @@
 
  ?>
 
+<?php if ( ! is_front_page() ) : ?>
  <?php if ( is_page( 'projects' ) ) : ?>
    <nav aria-label="breadcrumb" role="navigation">
      <ol class="breadcrumb">
@@ -110,4 +111,5 @@
       </li>
     </ol>
   </nav>
+<?php endif; ?>
 <?php endif; ?>

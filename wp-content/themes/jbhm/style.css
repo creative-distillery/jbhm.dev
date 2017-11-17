@@ -321,22 +321,17 @@ a:hover {
 }
 
 /*---------------    Breadcrumbs     ---------------*/
-#breadcrumbs{
-    list-style:none;
-    margin:10px 0;
-    overflow:hidden;
+.breadcrumb {
+  background-color: rgba( 238, 238, 238, .8);
+  border-radius: 0px;
 }
 
-#breadcrumbs li{
-    display:inline-block;
-    vertical-align:middle;
-    margin-right:15px;
+.breadcrumb-item > a {
+  color: #5A5957;
 }
 
-#breadcrumbs .separator{
-    font-size:18px;
-    font-weight:100;
-    color:#ccc;
+.breadcrumb-item.active {
+  color: #8E8E8E;
 }
 
 
