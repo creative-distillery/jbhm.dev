@@ -50,6 +50,10 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: 'Arial';
 }
 
+p {
+  line-height: 2;
+}
+
 a {
   color: #A7A7A7;
 }
@@ -372,6 +376,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.term-description {
+  margin-top: 1rem;
+}
+
 
 /*------------------------------------------------*/
 /*---------------     Projects     ---------------*/
@@ -449,6 +457,7 @@ a:hover {
 .industry-title-wrap h2 {
   font-size: 36px;
   display: inline;
+  vertical-align: middle;
 }
 .project-grid-item-container {
   margin: 5px 0;

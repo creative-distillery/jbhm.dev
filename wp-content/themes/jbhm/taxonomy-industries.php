@@ -25,7 +25,7 @@
 <?php if ( have_posts() ) : ?>
 
   <?php $currentTerm = get_queried_object(); ?>
-
+<?php print_r($currentTerm); ?>
   <div class="row">
     <div class="industry-title-wrap">
       <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
@@ -55,7 +55,7 @@
 
         ?>
 
-          <a class="industry-gallery-item<?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>">
+          <a class="industry-gallery-item<?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>?t=i&o=<?php echo $currentTerm->term_id; ?>">
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 

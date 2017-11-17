@@ -88,7 +88,7 @@
           </div>
         </nav>
 
-        <?php custom_breadcrumbs(); ?>
+        <?php get_template_part( 'breadcrumbs' ); ?>
 
       </div><!-- .header-img -->
 
