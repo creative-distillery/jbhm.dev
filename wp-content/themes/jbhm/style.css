@@ -28,6 +28,7 @@ This theme, like WordPress, is licensed under the GPL.
   -- People
   -- Footers
   -- Blog
+  -- Search
 ------------------------------------------------*/
 
 
@@ -280,6 +281,7 @@ a:hover {
 
 .cd-nav {
   background-color: #595959;
+  padding-left: 0px;
 }
 
 .cd-menu {
@@ -318,6 +320,14 @@ a:hover {
   display: block;
   font-size: 26px;
   font-weight: light;
+}
+
+#cd_search_form {
+  display: none;
+}
+
+#cd_search {
+  -webkit-appearance: none;
 }
 
 /*---------------    Breadcrumbs     ---------------*/
@@ -751,4 +761,25 @@ span.award-name {
 .blog-nav-link > a {
   font-style: italic;
   font-family: serif;
+}
+
+
+/*--------------------------------------------*/
+/*---------------    Search    ---------------*/
+/*--------------------------------------------*/
+
+.cd-search-results {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cd-search-result {
+  border-bottom: 1px solid #69A53C;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.cd-search-result > p {
+  margin: 0;
 }

@@ -37,6 +37,11 @@ jQuery(document).ready(function($) {
     $('.carousel').css('height', height + 'px' );
   });
 
+  $('#cd_search_start').on('click', function() {
+    $('#cd_search_start').hide();
+    $('#cd_search_form').css('display', 'flex');
+  });
+
 
 });
 

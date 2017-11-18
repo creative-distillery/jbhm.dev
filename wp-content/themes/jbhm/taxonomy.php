@@ -22,23 +22,27 @@
   }
 ?>
 
+
+<?php $currentTerm = get_queried_object(); ?>
+
+<div class="row">
+  <div class="industry-title-wrap">
+    <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
+    <a class="btn people-filter-btn<?php if ( $az ) : ?> active-filter<?php endif; ?>" href="?orderby=name&order=ASC">A-Z</a>
+    <a class="btn people-filter-btn<?php if ( $recent ) : ?> active-filter<?php endif; ?>" href="?orderby=date">Most Recent</a>
+
+    <?php if ( $currentTerm->description ) : ?>
+      <div class="term-description">
+        <p><?php echo $currentTerm->description; ?></p>
+      </div>
+    <?php endif; ?>
+  </div>
+</div>
+
+
 <?php if ( have_posts() ) : ?>
 
-  <?php $currentTerm = get_queried_object(); ?>
 
-  <div class="row">
-    <div class="industry-title-wrap">
-      <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
-      <a class="btn people-filter-btn<?php if ( $az ) : ?> active-filter<?php endif; ?>" href="?orderby=name&order=ASC">A-Z</a>
-      <a class="btn people-filter-btn<?php if ( $recent ) : ?> active-filter<?php endif; ?>" href="?orderby=date">Most Recent</a>
-
-      <?php if ( $currentTerm->description ) : ?>
-        <div class="term-description">
-          <p><?php echo $currentTerm->description; ?></p>
-        </div>
-      <?php endif; ?>
-    </div>
-  </div>
 
 
   <div class="row">
@@ -89,7 +93,7 @@
 
 <?php else: wp_reset_postdata(); ?>
 
-  <h3 class="mb-4">Sorry, nothing here! This is the taxonomy.php template though!</h3>
+  <h3 class="mb-4">Nothing was found!</h3>
 
 <?php endif; ?>
 

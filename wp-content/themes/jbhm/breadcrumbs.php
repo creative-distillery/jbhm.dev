@@ -3,7 +3,6 @@
   $queriedObject = get_queried_object();
 
 
-  // print_r($queriedObject);
 
 
  ?>
@@ -37,8 +36,7 @@
 
          <?php $term = get_terms( array(
            'taxonomy' => 'industries'
-         ));
-         // print_r( $queriedObject); ?>
+         )); ?>
 
          <li class="breadcrumb-item"><a href="../projects">Projects</a></li>
 
@@ -57,7 +55,6 @@
          <?php if ( isset( $_GET['o'] ) ) : ?>
            <?php $termID = $_GET['o']; ?>
            <?php $term = get_term_by( 'id', $termID, $tax ); ?>
-           <?php //print_r($term); ?>
            <li class="breadcrumb-item">
               <a href="<?php echo get_term_link( $term->term_id, $term->taxonomy ); ?>"><?php echo $term->name; ?></a>
            </li>
@@ -91,7 +88,6 @@
     $taxObject = get_taxonomy( $taxonomy );
     $display_tax = $taxObject->label;
     $display_term = $queriedObject->name;
-// print_r($taxObject);
   ?>
 
   <nav aria-label="breadcrumb" role="navigation">
