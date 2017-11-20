@@ -14,5 +14,6 @@
 
       <?php wp_footer(); ?>
 
+      <?php get_template_part( '/assets/a/gtm', 'footer' ); ?>
   </body>
 </html>

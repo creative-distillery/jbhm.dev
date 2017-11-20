@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Icon path here -->
     <link rel="icon" href="">
+    <?php get_template_part( '/assets/a/gtm', 'head' ); ?>
 
     <?php wp_head(); ?>
 

@@ -30,7 +30,7 @@ $search = new WP_Query( $search_query );
 
   <?php endwhile; else: ?>
 
-    <h3 class="mb-4">Sorry, nothing here!</h3>
+    <h2 class="mt-3 accent">No search results for "<?php echo $search_query['s']; ?>"</h2>
 
   <?php endif; ?>
 

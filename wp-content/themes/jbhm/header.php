@@ -7,6 +7,8 @@
     <!-- Icon path here -->
     <link rel="icon" href="">
 
+    <?php get_template_part( '/assets/a/gtm', 'head' ); ?>
+
     <?php wp_head(); ?>
 
   </head>
