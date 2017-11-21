@@ -65,17 +65,21 @@
 
          <li class="breadcrumb-item"><a href="../projects">Projects</a></li>
 
-         <?php if ( isset( $_GET['t'] ) ) : ?>
-           <li class="breadcrumb-item">
-             <?php if (  $_GET['t'] == 'i' ) : ?>
-               <?php $tax = 'industries'; ?>
-              <a href="<?php bloginfo('url'); ?>/projects">Industries</a>
-             <?php elseif ( $_GET['t'] == 's' ) : ?>
+         <li class="breadcrumb-item">
+           <?php if ( isset( $_GET['t'] ) ) : ?>
+
+             <?php if (  $_GET['t'] == 's' ) : ?>
                <?php $tax = 'services'; ?>
                <a href="<?php bloginfo('url'); ?>/services">Services</a>
              <?php endif; ?>
-           </li>
-         <?php endif; ?>
+
+           <?php else: ?>
+
+             <?php $tax = 'industries'; ?>
+             <a href="<?php bloginfo('url'); ?>/projects">Industries</a>
+
+           <?php endif; ?>
+         </li>
 
          <?php if ( isset( $_GET['o'] ) ) : ?>
            <?php $termID = $_GET['o']; ?>

@@ -12,15 +12,6 @@ jQuery(document).ready(function($) {
   });
 
 
-
-  // var industryGallery = document.querySelector('.industry-gallery');
-  // var industryMasonry = new Masonry(industryGallery, {
-  //   itemSelector: '.industry-gallery-item',
-  //   columnWidth: '.industry-grid-sizer',
-  //   percentPosition: true,
-  //   gutter: 10
-  // });
-
   var $industryMasonry = $('.industry-gallery').masonry({
     itemSelector: '.industry-gallery-item',
     columnWidth: '.industry-grid-sizer',
@@ -32,11 +23,11 @@ jQuery(document).ready(function($) {
     $industryMasonry.masonry('layout');
   });
 
-  $('.carousel').on('slide.bs.carousel', function () {
-    var height = $('data-height');
-    console.log(height);
-    $('.carousel').css('height', height + 'px' );
-  });
+  // $('.carousel').on('slide.bs.carousel', function () {
+  //   var height = $('data-height');
+  //   console.log(height);
+  //   $('.carousel').css('height', height + 'px' );
+  // });
 
   $('#cd_search_start').on('click', function() {
     $('#cd_search_start').hide();
