@@ -144,11 +144,12 @@ a:hover {
   background-color: #fff;
   border: 0px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .industry-grid-sizer,
 .industry-gallery-item {
-  width: 49%;
+  width: 48%;
   background-color: #fff;
   border: 0px;
   cursor: pointer;
@@ -289,6 +290,12 @@ a:hover {
   padding-top: .75rem;
   justify-content: flex-end;
 }
+
+.cd-menu > ul {
+  flex-wrap: nowrap;
+}
+
+
 .cd-nav li {
   margin-left: .5rem;
   margin-right: .5rem;

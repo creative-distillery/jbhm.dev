@@ -5,12 +5,16 @@
   // $first_image = $first_row['img'];
 
   $gallery = get_field( 'gallery' );
-  $sliders = array();
-  foreach ( $gallery as $image ) {
-    if ( get_field( 'slider', $image['ID'] ) ) {
-      array_push( $sliders, $image );
+
+  if ($gallery) {
+    $sliders = array();
+    foreach ( $gallery as $image ) {
+      if ( get_field( 'slider', $image['ID'] ) ) {
+        array_push( $sliders, $image );
+      }
     }
   }
+  
   if ( ! empty( $sliders ) ) {
     get_header( 'slider' );
   } elseif ( get_field( 'header_img' ) || ! empty( $gallery ) ) {

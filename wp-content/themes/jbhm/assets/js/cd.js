@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
     itemSelector: '.gallery-item',
     columnWidth: '.grid-sizer',
     percentPosition: true,
+    gutter: 10
   });
 
 
@@ -69,6 +70,11 @@ jQuery(document).ready(function($) {
     }
 
   });
+
+  lightbox.option({
+       'resizeDuration': 200,
+       'wrapAround': true
+     });
 
 }); //document.ready
 

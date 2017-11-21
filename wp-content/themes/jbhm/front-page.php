@@ -35,7 +35,7 @@
       $args = array(
         'post_type' => 'project',
         'orderby' => 'date',
-        'posts_per_page' => 20
+        'posts_per_page' => 20,
       );
 
       $projectQuery = new WP_Query( $args );
@@ -54,17 +54,28 @@
 
             if ( get_field( 'header_img' ) ) {
               $img = get_field( 'header_img' );
-            } else {
+            } elseif ( get_field( 'gallery' ) ) {
               $gallery = get_field( 'gallery' );
               $img = $gallery[0];
             }
-            $width = $img['width'];
-            $height = $img['height'];
-            $ratio = $width / $height;
+
+            if ( ! empty($img) ) :
+              $width = $img['width'];
+              $height = $img['height'];
+              $ratio = $width / $height;
+
+
+            /*
+              Add this snippet to the end of the class list of the <a> tag to have some images span two columns.
+              If the image retrieved is wider than the specified ratio, it will trigger the wide image.
+              Change ratio as desired.
+
+              <?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>
+            */
 
           ?>
 
-          <a class="industry-gallery-item<?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>">
+          <a class="industry-gallery-item" href="<?php the_permalink(); ?>">
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
@@ -82,6 +93,8 @@
             </div>
 
           </a>
+
+        <?php endif; // if($img) ?>
 
       <?php endwhile; wp_reset_postdata(); ?>
 
