@@ -332,8 +332,9 @@ a:hover {
 
 /*---------------    Breadcrumbs     ---------------*/
 .breadcrumb {
-  background-color: rgba( 238, 238, 238, .8);
+  background-color: transparent;
   border-radius: 0px;
+  margin: 0;
 }
 
 .breadcrumb-item > a {
@@ -341,6 +342,34 @@ a:hover {
 }
 
 .breadcrumb-item.active {
+  color: #8E8E8E;
+}
+
+.cd-breadcrumb {
+  background-color: rgba( 238, 238, 238, .8);
+
+  max-width: 100%;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.cd-breadcrumb-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumb-industry-list {
+  display: none;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  height: 150px;
+  padding: .75rem 1rem;
+  top: -200px;
+  transition: .5s;
+}
+
+.breadcrumb-industry-list > li {
   color: #8E8E8E;
 }
 

@@ -84,7 +84,16 @@
               wp_nav_menu( $args );
                ?>
 
-               <a href="#"><i class="fa fa-search fa-2x ml-2 accent"></i></a>
+               <i id="cd_search_start" class="fa fa-search fa-2x ml-2 accent"></i>
+
+
+               <form id="cd_search_form" method="get" action="<?php echo home_url(); ?>">
+
+                 <input id="search_box" class="form-control" type="text" name="s">
+
+                 <i type="submit" id="cd_search" class="fa fa-search fa-2x ml-2 accent"></i>
+
+               </form>
 
           </div>
         </nav>

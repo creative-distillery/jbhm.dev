@@ -46,7 +46,7 @@
                <i id="cd_search_start" class="fa fa-search fa-2x ml-2 accent"></i>
 
 
-               <form id="cd_search_form" method="get" action="">
+               <form id="cd_search_form" method="get" action="<?php echo home_url(); ?>">
 
                  <input id="search_box" class="form-control" type="text" name="s">
 

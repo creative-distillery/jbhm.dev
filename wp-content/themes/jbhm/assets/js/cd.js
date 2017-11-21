@@ -42,8 +42,35 @@ jQuery(document).ready(function($) {
     $('#cd_search_form').css('display', 'flex');
   });
 
+  $('#breadcrumb_toggle').on('click', function() {
+    if ($('#industry_list').data('expanded') == false) {
+      $('#industry_list').css('display', 'flex');
+      $('#industry_list').data('expanded', true);
+      $({deg: 0}).animate({deg: -180}, {
+          duration: 300,
+          step: function(now){
+              $('#breadcrumb_toggle').css({
+                   transform: "rotate(" + now + "deg)"
+              });
+          }
+      });
 
-});
+    } else if ($('#industry_list').data('expanded') == true) {
+      $('#industry_list').css('display', 'none');
+      $('#industry_list').data('expanded', false);
+      $({deg: 180}).animate({deg: 0}, {
+          duration: 300,
+          step: function(now){
+              $('#breadcrumb_toggle').css({
+                   transform: "rotate(" + now + "deg)"
+              });
+          }
+      });
+    }
+
+  });
+
+}); //document.ready
 
 // document.getElementById('learn_more_link').on
 

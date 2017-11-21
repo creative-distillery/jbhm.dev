@@ -58,7 +58,8 @@
           <span class="sr-only">Next</span>
         </a>
 
-        <nav class="navbar navbar-expand-md cd-nav cd-slider-nav">
+        <div class="cd-slider-nav">
+        <nav class="navbar navbar-expand-md cd-nav">
 
           <a class="navbar-brand w-75 mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>
@@ -86,13 +87,22 @@
 
                ?>
 
-               <a href="#"><i class="fa fa-search fa-2x ml-2 accent"></i></a>
+               <i id="cd_search_start" class="fa fa-search fa-2x ml-2 accent"></i>
+
+
+               <form id="cd_search_form" method="get" action="<?php echo home_url(); ?>">
+
+                 <input id="search_box" class="form-control" type="text" name="s">
+
+                 <i type="submit" id="cd_search" class="fa fa-search fa-2x ml-2 accent"></i>
+
+               </form>
 
           </div>
         </nav>
 
         <?php get_template_part( 'breadcrumbs' ); ?>
-
-      </div><!-- .header-img -->
+</div>
+      </div><!-- .carousel -->
 
       <div class="container-fluid">
