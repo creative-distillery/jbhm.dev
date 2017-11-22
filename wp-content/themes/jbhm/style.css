@@ -125,30 +125,16 @@ a:hover {
 
 /*---------------     Gallery     ---------------*/
 
+
 .cd-gallery {
   width: 900px;
   max-width: 98%;
   margin: 0 auto;
 }
 
-.industry-gallery {
-  width: 900px;
-  max-width: 98%;
-  margin: 0 auto;
-}
-
 /* Small screen gallery */
-.grid-sizer,
-.gallery-item {
-  width: 50%;
-  background-color: #fff;
-  border: 0px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.industry-grid-sizer,
-.industry-gallery-item {
+.cd-grid-sizer,
+.cd-gallery-item {
   width: 48%;
   background-color: #fff;
   border: 0px;
@@ -156,64 +142,32 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.gallery-wide,
-.industry-gallery-wide {
+.cd-gallery-wide {
   width: 100%;
 }
 
-.gutter-sizer {
-  width: 2%;
-}
-
-.lightbox-img {
-  margin: 0 auto;
-  height: auto;
-  position: relative;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  /*padding: 15px;*/
-  width: 95%;
-}
-
-
 /* Medium screen gallery */
 @media screen and (min-width: 768px) {
-  .grid-sizer,
-  .gallery-item {
-    width: 33.3%;
-  }
 
-.industry-grid-sizer,
-.industry-gallery-item {
+.cd-grid-sizer,
+.cd-gallery-item {
     width: 32.3%;
   }
 
-  .gallery-wide {
-    width: 66.6%
-  }
-
-  .industry-gallery-wide {
+  .cd-gallery-wide {
     width: 64.6%
   }
 }
 
 /* Large screen gallery */
 @media screen and (min-width: 992px) {
-  .grid-sizer,
-  .gallery-item {
-    width: 25%;
+
+  .cd-grid-sizer,
+  .cd-gallery-item {
+      width: 24%;
   }
 
-.industry-grid-sizer,
-.industry-gallery-item {
-    width: 24%;
-  }
-
-  .gallery-wide {
-    width: 50%;
-  }
-
-  .industry-gallery-wide {
+  .cd-gallery-wide {
     width: 49%;
   }
 }
@@ -226,34 +180,6 @@ a:hover {
   }
 }
 
-.cd-lightbox-header {
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: flex-end;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  background-color: rgba(0, 0, 0, 0);
-  border: 0px;
-  margin: 15px 0;
-  /*padding: 15px;*/
-}
-
-.cd-lightbox-content {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  outline: 0;
-}
-
-.cd-lightbox-img {
-
-}
 
 
 
@@ -577,7 +503,7 @@ a:hover {
 }
 
 .gallery-item:hover > div.project-info,
-.industry-gallery-item:hover > div.project-info {
+.cd-gallery-item:hover > div.project-info {
   opacity: 1;
 }
 div.project-info > div {

@@ -1,14 +1,14 @@
 <?php
-//TODO: "cd-gallery" as a selector is gone. Replace "cd-gallery" settings in cd.js and style.css and then change all "industry-gallery" to "cd-gallery".
+//TODO: "cd-gallery" as a selector is gone. Replace "cd-gallery" settings in cd.js and style.css and then change all "cd-gallery" to "cd-gallery".
   $gallery = get_field( 'gallery' );
 
 ?>
 
 <?php if ( $gallery ) : ?>
 
-  <div class="industry-gallery">
+  <div class="cd-gallery">
 
-    <div class="industry-grid-sizer"></div>
+    <div class="cd-grid-sizer"></div>
 
     <?php foreach( $gallery as $image ) : ?>
 
@@ -46,7 +46,7 @@
 
 
       ?>
-      <a class="industry-gallery-item" href="<?php echo $image['url']; ?>" data-lightbox="project_gallery_<?php echo $post->ID; ?>">
+      <a class="cd-gallery-item" href="<?php echo $image['url']; ?>" data-lightbox="project_gallery_<?php echo $post->ID; ?>">
         <img class="img-fluid gallery-img" src="<?php echo $imgSrc; ?>" alt="<?php echo $image['alt']; ?>"/>
       </a>
 

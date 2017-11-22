@@ -3,18 +3,10 @@ jQuery(document).ready(function($) {
   $('li.nav-item > a').addClass('nav-link');
   $('#quick_links_wrapper > ul').addClass('list-unstyled');
 
-  var gallery = document.querySelector('.cd-gallery');
-  var masonry = new Masonry(gallery, {
-    itemSelector: '.gallery-item',
-    columnWidth: '.grid-sizer',
-    percentPosition: true,
-    gutter: 10
-  });
-
-
-  var $industryMasonry = $('.industry-gallery').masonry({
-    itemSelector: '.industry-gallery-item',
-    columnWidth: '.industry-grid-sizer',
+  //initialize Masonry plugin
+  var $industryMasonry = $('.cd-gallery').masonry({
+    itemSelector: '.cd-gallery-item',
+    columnWidth: '.cd-grid-sizer',
     percentPosition: true,
     gutter: 10
   });

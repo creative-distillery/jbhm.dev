@@ -44,9 +44,9 @@
 
     <?php if ( $projectQuery->have_posts() ) : ?>
 
-      <div class="industry-gallery">
+      <div class="cd-gallery">
 
-        <div class="industry-grid-sizer"></div>
+        <div class="cd-grid-sizer"></div>
 
         <?php while ( $projectQuery-> have_posts() ) : $projectQuery->the_post(); ?>
 
@@ -70,12 +70,12 @@
               If the image retrieved is wider than the specified ratio, it will trigger the wide image.
               Change ratio as desired.
 
-              <?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>
+              <?php if ( $ratio > 1.8 ) : ?> cd-gallery-wide<?php endif;?>
             */
 
           ?>
 
-          <a class="industry-gallery-item" href="<?php the_permalink(); ?>">
+          <a class="cd-gallery-item" href="<?php the_permalink(); ?>">
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 

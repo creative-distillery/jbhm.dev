@@ -37,9 +37,9 @@
 
 <?php if ( have_posts() ) : ?>
 
-  <div class="industry-gallery">
+  <div class="cd-gallery">
 
-    <div class="industry-grid-sizer"></div>
+    <div class="cd-grid-sizer"></div>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
@@ -57,7 +57,7 @@
 
       ?>
 
-      <a class="industry-gallery-item<?php if ( $ratio > 1.8 ) : ?> industry-gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>?t=i&o=<?php echo $currentTerm->term_id; ?>">
+      <a class="cd-gallery-item<?php if ( $ratio > 1.8 ) : ?> cd-gallery-wide<?php endif;?>" href="<?php the_permalink(); ?>?t=i&o=<?php echo $currentTerm->term_id; ?>">
 
         <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 

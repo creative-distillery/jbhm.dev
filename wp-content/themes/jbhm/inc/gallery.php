@@ -1,5 +1,5 @@
 <?php
-
+//TODO: "cd-gallery" as a selector is gone. Replace "cd-gallery" settings in cd.js and style.css and then change all "cd-gallery" to "cd-gallery".
   $gallery = get_field( 'gallery' );
 
 ?>
@@ -8,7 +8,7 @@
 
   <div class="cd-gallery">
 
-    <div class="grid-sizer"></div>
+    <div class="cd-grid-sizer"></div>
 
     <?php foreach( $gallery as $image ) : ?>
 
@@ -46,23 +46,10 @@
 
 
       ?>
-
-      <button type="button" class="gallery-item<?php if ( $wideImg ) : ?> gallery-wide<?php endif; ?> p-2" data-toggle="modal" data-target="#imgLightbox<?php echo $image['ID']; ?>">
+      <a class="cd-gallery-item" href="<?php echo $image['url']; ?>" data-lightbox="project_gallery_<?php echo $post->ID; ?>">
         <img class="img-fluid gallery-img" src="<?php echo $imgSrc; ?>" alt="<?php echo $image['alt']; ?>"/>
-      </button>
+      </a>
 
-      <div class="modal fade" id="imgLightbox<?php echo $image['ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="imgLightbox<?php echo $image['ID']; ?>" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="cd-lightbox-content">
-            <div class="cd-lightbox-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-              <img class="lightbox-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
-          </div>
-        </div>
-      </div>
 
     <?php endforeach; ?>
 
