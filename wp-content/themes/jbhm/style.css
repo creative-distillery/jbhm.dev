@@ -52,6 +52,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 }
 
+.home p {
+  margin-bottom: 0px;
+}
+
 h2 {
   font-size: 2em;
 }
@@ -642,15 +646,57 @@ span.award-name {
 .cd-footer {
   background-color: #EEEEEE;
   margin-top: 1rem;
-  padding: 1.5rem 2rem;
+  padding-top: 20px;
+}
+
+.cd-footer-col {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cd-footer .widget {
+  /*text-align: center;*/
+/* TODO: left default, center at md breakpoint */
+}
+.cd-footer .textwidget {
+  /*display: inline-block;
+  max-width: 100%;*/
+
+}
+
+.footer-contact {
+  display: inline-block;
+}
+
+p.social-links {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.social-links > a {
+  color: #4A4A4A;
+  margin: 0 .25rem;
+}
+.footer-contact-info {
+  display: inline-block;
+}
+.footer-contact-info > a {
+  color: #4A4A4A;
 }
 
 .quick-links-container {
   line-height: 14px;
 }
 
+.quick-links-container #menu-quick-links {
+  margin-bottom: 0px;
+}
+
 .quick-links-container a.nav-link {
-  padding-left: 0px;
+  padding: 0px;
 }
 
 .quick-links {
@@ -659,23 +705,11 @@ span.award-name {
 }
 
 .cd-copyright {
-  font-size: 75%;
+  /*text-align: center;*/
+  /* TODO: left default, center at md breakpoint */
+
+  font-size: .75rem;
   color: #A7A7A7;
-}
-
-.cd-footer-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.social-links > a {
-  color: #4A4A4A;
-  margin: 0 .25rem;
-}
-
-.footer-contact-info > a {
-  color: #4A4A4A;
 }
 
 /*--------------------------------------------*/
