@@ -46,7 +46,7 @@
 
       <div class="cd-gallery">
 
-        <div class="cd-grid-sizer"></div>
+        <div class="cd-gallery-sizer"></div>
 
         <?php while ( $projectQuery-> have_posts() ) : $projectQuery->the_post(); ?>
 
@@ -81,10 +81,10 @@
 
             <div class="project-info">
 
-              <div class="text-left w-auto">
-                <h4><?php the_title(); ?></h4>
+              <div class="text-left w-auto h-size-adjust">
+                <h3><?php the_title(); ?></h3>
                 <hr class="accent">
-                <h5><?php the_field( 'location' ); ?></h5>
+                <h4><?php the_field( 'location' ); ?></h4>
               </div>
               <div class="text-right w-100">
                 <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>

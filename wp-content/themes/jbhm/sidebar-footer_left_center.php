@@ -1,4 +1,3 @@
-<div class="col-md-6 col-lg-3 order-md-3 order-lg-2 cd-footer-col">
 
 	<p class="social-links">
 
@@ -39,5 +38,3 @@
 		<?php endif; ?>
 
 	</p>
-
-</div>

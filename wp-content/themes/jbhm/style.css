@@ -17,8 +17,11 @@ This theme, like WordPress, is licensed under the GPL.
 /*------------------------------------------------*/
 
 /*------------------------------------------------
-  -- General
+  -- Typography
+  -- Layout
+    -- Grid
     -- Gallery
+  -- General
   -- Headers
     -- Breadcrumbs
   -- Front_Page
@@ -31,96 +34,185 @@ This theme, like WordPress, is licensed under the GPL.
   -- Search
 ------------------------------------------------*/
 
-
-
 /*-----------------------------------------------*/
-/*---------------     General     ---------------*/
+/*-------------     Typography     --------------*/
 /*-----------------------------------------------*/
 
+html {
+  font-size: 18px;
+  line-height: 18px;
+}
 
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
+body {
+font-family: "acumin-pro", Arial, sans-serif;
+color: #4A4A4A;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.333em;
+  font-style: normal;
+}
+
+
+h4 {
+  font-size: 1.333em;
+  font-style: normal;
+}
+
+/*Goes on containing element*/
+
+.h-size-adjust {
+  font-size: .83rem;
+}
+
+p {
+  font-size: 1em;
+  line-height: 2;
+}
+
+a {
+  color: #9B9B9B;
+  transition: color .2s;
+}
+
+a:hover {
+  color: #6BA443;
+}
+
+li {
+  line-height: 2;
+}
+
+.dark-font {
+  color: #4A4A4A;
+}
+
+.light-font {
+  color: #9B9B9B;
+  line-height: 2;
+}
+
+.more-link,
+.cd-more {
+  font-family: adobe-caslon-pro, serif;
+  font-style: italic;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.accent {
+  color: #6BA443;
+  border-top-color: #6BA443;
+  stroke: #6BA443;
+}
+
+
+/*----------------------------------------------*/
+/*---------------     Layout     ---------------*/
+/*----------------------------------------------*/
 
 body {
   width: 100%;
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  color: #4A4A4A;
-  font-family: 'Arial';
-}
-
-p {
-  line-height: 2;
-}
-
-a {
-  color: #A7A7A7;
-}
-
-a:hover {
-  color: #69A53C;
-}
-
-.accent {
-  color: #69A53C;
-  border-top-color: #69A53C;
-  stroke: #69A53C;
-}
-
-.cd-more {
-  font-family: serif;
-  font-style: italic;
-}
-
-/* no grid support? */
-
-.cd-grid {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.cd-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
-  grid-gap: 1rem;
-  grid-auto-flow: dense;
-}
+/*---------------     Grid     ---------------*/
 
 .cd-grid-item {
-  /* needed for the flex layout*/
-  margin-left: 5px;
-  margin-right: 5px;
-  flex: 1 1 200px;
-}
-
-.cd-grid-item {
+  padding: 5px;
   position: relative;
+  width: 100%;
+  min-height: 1px;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
-/*
-.cd-grid-item-large {
 
-    grid-column-end: span 2;
-    grid-row-end: auto;
-
-}*/
-
-/* set the margin used on flex items to 0 as we have gaps in grid.  */
-
-@supports (display: grid) {
-  .cd-grid > * {
-    margin: 0;
+@media (min-width: 768px) {
+  .cd-grid-item {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
   }
 }
 
-.cd-grid-item:hover > a > div {
-  opacity: 1;
+@media (min-width: 992px) {
+  .cd-grid-item {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
 }
 
+
+.cd-grid-inner {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cd-grid-item > a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.cd-grid-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  /*position: absolute;
+  bottom: 0;*/
+  background-color: rgba(89, 89, 89, .75);
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  color: #fff;
+  padding: .5rem .25rem;
+  opacity: 0;
+  transition: opacity .75s;
+}
+
+.cd-grid-content-person {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgba(89, 89, 89, .75);
+  height: 33%;
+  width: 100%;
+  max-width: 100%;
+  padding: .5rem .25rem;
+  opacity: 0;
+  transition: opacity .75s;
+}
+
+
+
+.cd-grid-content-person > hr {
+  margin: .75rem 0;
+}
+
+.cd-grid-content-person > h3,
+.cd-grid-content-person > h4 {
+ margin: 0;
+}
+
+.cd-grid-item:hover div {
+  opacity: 1;
+}
 
 
 /*---------------     Gallery     ---------------*/
@@ -133,7 +225,7 @@ a:hover {
 }
 
 /* Small screen gallery */
-.cd-grid-sizer,
+.cd-gallery-sizer,
 .cd-gallery-item {
   width: 48%;
   background-color: #fff;
@@ -149,7 +241,7 @@ a:hover {
 /* Medium screen gallery */
 @media screen and (min-width: 768px) {
 
-.cd-grid-sizer,
+.cd-gallery-sizer,
 .cd-gallery-item {
     width: 32.3%;
   }
@@ -162,7 +254,7 @@ a:hover {
 /* Large screen gallery */
 @media screen and (min-width: 992px) {
 
-  .cd-grid-sizer,
+  .cd-gallery-sizer,
   .cd-gallery-item {
       width: 24%;
   }
@@ -172,15 +264,9 @@ a:hover {
   }
 }
 
-
-@media (min-width: 576px) {
-  .modal-dialog {
-    margin-top: 5%;
-    max-width: 85%;
-  }
+.cd-grid-content > h3 {
+  text-transform: uppercase;
 }
-
-
 
 
 /*-----------------------------------------------*/
@@ -426,59 +512,7 @@ a:hover {
   display: inline;
   vertical-align: middle;
 }
-.project-grid-item-container {
-  margin: 5px 0;
-  padding-right: 5px;
-  padding-left: 5px;
-}
 
-.project-grid-item-container > a:hover {
-  text-decoration: none;
-}
-
-.project-grid-item {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-
-.project-grid-item > a {
-  width: 100%;
-}
-
-.industry-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  /*position: absolute;
-  bottom: 0;*/
-  background-color: rgba(89, 89, 89, .75);
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-  color: white;
-  padding: .5rem .25rem;
-  opacity: 0;
-  transition: opacity .75s;
-}
-
-.project-grid-item:hover div.industry-info {
-  opacity: 1;
-}
-
-.industry-info > h4 {
-  font-size: 1.2;
-  color: white;
-  text-transform: uppercase;
-
-}
-
-.industry-info > p {
-  color: white;
-}
 
 /*----------   Industry Projects Page   ---------*/
 /*--------   (taxonomy-industries.php)   --------*/
@@ -495,8 +529,8 @@ a:hover {
   width: 100%;
   max-width: 100%;
   color: white;
-  padding: 1.5rem 1rem;
-  padding-bottom: .5rem;
+  padding: 1rem .75rem;
+  /*padding-bottom: .5rem;*/
   opacity: 0;
   transition: opacity .75s;
   text-align: left;
@@ -509,12 +543,7 @@ a:hover {
 div.project-info > div {
   width: auto;
 }
-div.project-info h4,
-div.project-info h5,
-div.project-info p {
-  color: white;
-  margin-bottom: 0px;
-}
+
 
 .project-info hr {
 width: 80%;
@@ -524,15 +553,20 @@ width: 80%;
 /*---------------     People     ---------------*/
 /*----------------------------------------------*/
 
-.person-content-wrap {
-  width: 80%;
-  max-width: 95%;
+.cd-grid-content-person {
+  /*font-size: .84rem;*/
+  color: white;
+}
+
+.person {
+  width: 900px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
 }
 
-.person-content-wrap hr {
+.person hr {
   border-top-width: 2px;
   width: 40%;
   float: left;
@@ -554,7 +588,7 @@ ul.award-list {
   color: #69A53C;
 }
 
-.person-content-wrap h5 {
+.person h5 {
   font-size: 1rem;
   margin-bottom: .6rem;
 }
@@ -587,21 +621,7 @@ span.award-name {
   color: white;
 }
 
-.person-card-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(89, 89, 89, .75);
-  height: 33%;
-  width: 100%;
-  max-width: 100%;
-  color: white;
-  padding: .5rem .25rem;
-  opacity: 0;
-  transition: opacity .75s;
-}
+
 
 
 .person-card-info > h4,

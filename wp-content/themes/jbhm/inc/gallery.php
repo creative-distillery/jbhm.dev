@@ -8,7 +8,7 @@
 
   <div class="cd-gallery">
 
-    <div class="cd-grid-sizer"></div>
+    <div class="cd-gallery-sizer"></div>
 
     <?php foreach( $gallery as $image ) : ?>
 

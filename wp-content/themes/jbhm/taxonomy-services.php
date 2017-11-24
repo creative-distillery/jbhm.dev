@@ -69,7 +69,7 @@
 
         ?>
 
-          <a class="cd-gallery-item" href="<?php the_permalink(); ?>">
+          <a class="cd-gallery-item" href="<?php the_permalink(); ?>?t=s&o=<?php echo $currentTerm->term_id; ?>">
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 

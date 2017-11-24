@@ -51,32 +51,30 @@
       <a class="btn people-filter-btn<?php if ($principals) : ?> active-filter<?php endif; ?>" href="?p=Principals" id="filter_principals">Principals</a>
       <a class="btn people-filter-btn<?php if ($team) : ?> active-filter<?php endif; ?>" href="?p=Team" id="filter_team">Team</a>
 
-    <div>
+    </div>
   </div>
 </div>
 
 
-    <div class="row">
+    <div class="row mb-4">
 
 
         <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
           <?php $headshot = get_field( 'headshot' ); ?>
 
-          <div class="cd-grid-item col-6 col-md-4 col-lg-3 mb-4">
+          <div class="cd-grid-item">
 
             <a href="<?php the_permalink(); ?>">
+              <div class="cd-grid-inner"  style="background-image: url(<?php echo $headshot['sizes']['thumbnail']; ?>)">
 
-              <img class="img-fluid" src="<?php echo $headshot['url']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
-
-              <div class="person-card-info">
-
-                <h4><?php the_title(); ?></h4>
-                <hr class="accent">
-                <h5><?php the_field( 'position' ); ?></h5>
+                <div class="cd-grid-content-person h-size-adjust">
+                  <h3><?php the_title(); ?></h3>
+                  <hr class="accent">
+                  <h4><?php the_field( 'position' ); ?></h4>
+                </div>
 
               </div>
-
             </a>
 
           </div>

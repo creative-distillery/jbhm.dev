@@ -39,7 +39,7 @@
 
   <div class="cd-gallery">
 
-    <div class="cd-grid-sizer"></div>
+    <div class="cd-gallery-sizer"></div>
 
     <?php while ( have_posts() ) : the_post(); ?>
 

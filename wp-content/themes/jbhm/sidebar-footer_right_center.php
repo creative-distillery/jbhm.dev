@@ -1,4 +1,3 @@
-<div class="col-md-6 col-lg-3 text-md-right order-md-2 order-lg-3 cd-footer-col quick-links-container">
 	<h6 class="quick-links">Quick Links</h6>
 	<?php
 
@@ -10,4 +9,3 @@
 		wp_nav_menu( $quickLinks );
 
 	?>
-</div>

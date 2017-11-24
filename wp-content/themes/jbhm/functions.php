@@ -9,6 +9,7 @@
     wp_enqueue_style( 'boostrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
     wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fa/css/font-awesome.min.css' );
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/dist/css/lightbox.min.css' );
+    wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
   }
 

@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
   //initialize Masonry plugin
   var $industryMasonry = $('.cd-gallery').masonry({
     itemSelector: '.cd-gallery-item',
-    columnWidth: '.cd-grid-sizer',
+    columnWidth: '.cd-gallery-sizer',
     percentPosition: true,
     gutter: 10
   });

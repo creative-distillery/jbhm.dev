@@ -20,20 +20,22 @@
         <?php $acf_term_id = 'services_' . $term->term_id; ?>
         <?php $img = get_field( 'image', $acf_term_id ); ?>
 
-        <div class="col-6 col-md-4 col-lg-3 project-grid-item-container">
+        <div class="cd-grid-item">
+
           <a href="../services/<?php echo $term->slug; ?>">
+            <div class="cd-grid-inner" style="background-image: url(<?php echo $img['sizes']['thumbnail']; ?>)">
 
-          <div class="project-grid-item" style="background-image: url(<?php echo $img['sizes']['thumbnail']; ?>)">
-
-              <div class="industry-info">
-                <h4><?php echo $term->name; ?></h4>
-                <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+              <div class="cd-grid-content">
+                <h3><?php echo $term->name; ?></h3>
+                <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
               </div>
 
-          </div>
-        </a>
+            </div>
+          </a>
 
         </div>
+
+
 
       <?php endforeach; ?>
 
