@@ -21,6 +21,8 @@
 
 	</p>
 
+	<br>
+
 	<p class="footer-contact-info">
 
 		<?php if ( get_field( 'contact_phone', 'option' ) ) : ?>

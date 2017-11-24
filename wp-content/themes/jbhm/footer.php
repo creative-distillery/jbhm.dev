@@ -1,23 +1,35 @@
       <div class="row cd-footer">
 
-        <div class="col-md-6 col-lg-3 order-md-1 cd-footer-col">
-          <?php dynamic_sidebar( 'footer-left' ); ?>
+        <div class="col-12 col-md-4 cd-footer-col">
+          <div class="text-md-center">
+          	<div class="d-inline-block text-left">
+              <?php dynamic_sidebar( 'footer-left' ); ?>
+            </div>
+          </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 order-md-3 order-lg-2 cd-footer-col">
-          <?php get_sidebar( 'footer_left_center' ); ?>
+        <div class="col-12 col-md-2 cd-footer-col">
+          <div class="text-md-center">
+          	<div class="d-inline-block text-left">
+              <?php get_sidebar( 'footer_left_center' ); ?>
+            </div>
+          </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 text-md-right order-md-2 order-lg-3 cd-footer-col quick-links-container">
-          <?php get_sidebar( 'footer_right_center' ); ?>
+        <div class="col-12 col-md-2 cd-footer-col quick-links-container">
+          <div class="text-md-center">
+          	<div class="d-inline-block text-left">
+              <?php get_sidebar( 'footer_right_center' ); ?>
+            </div>
+          </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 order-md-4 text-left text-md-right cd-footer-col">
+        <div class="col-12 col-md-4 cd-copyright text-md-center cd-footer-col">
           <?php get_sidebar( 'footer_right' ); ?>
         </div>
 
-
       </div>
+
     </div><!--.container-fluid-->
 
       <?php wp_footer(); ?>
