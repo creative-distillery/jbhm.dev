@@ -2,23 +2,22 @@
 
   $queriedObject = get_queried_object();
 
-
-
+/* TODO: Make '/projects' a list of all projects, then make "Projects" link in header link to industries archive page.
+*/
  ?>
 
 <?php if ( ! is_front_page() ) : ?>
 
  <?php if ( is_page( 'projects' ) ) : ?>
-   <nav class="cd-breadcrumb" aria-label="breadcrumb" role="navigation">
+   <nav class="cd-breadcrumb" id="page-projects-breadcrumbs" aria-label="breadcrumb" role="navigation">
 
      <div class="cd-breadcrumb-top">
 
        <ol class="breadcrumb">
-         <li class="breadcrumb-item"><a href="../projects"><?php echo $queriedObject->post_title; ?></a></li>
          <li class="breadcrumb-item active" aria-current="page">Industries</li>
        </ol>
 
-       <img id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
+       <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
 
      </div>
 
@@ -37,8 +36,39 @@
     </ul>
 
   </nav>
+
+<?php elseif ( is_page( 'services' ) ) : ?>
+
+  <nav class="cd-breadcrumb" id="page-services-breadcrumbs" aria-label="breadcrumb" role="navigation">
+    <div class="cd-breadcrumb-top">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Services</li>
+      </ol>
+
+      <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
+
+    </div>
+
+    <ul id="industry_list" class="list-unstyled breadcrumb-industry-list" data-expanded="false">
+      <?php print_r($queriedObject); ?>
+      <?php
+         $industries = get_terms(
+           array(
+             'taxonomy' => 'services',
+             'hide_empty' => false,
+           )
+         );
+       ?>
+       <?php foreach ( $industries as $industry ) : ?>
+           <li><a href="<?php echo get_term_link( $industry->term_id, $industry->taxonomy ); ?>"><?php echo $industry->name; ?></a></li>
+       <?php endforeach; ?>
+     </ul>
+
+  </nav>
+
+
 <?php elseif ( is_page() ) : ?>
-    <nav aria-label="breadcrumb" role="navigation">
+    <nav class="cd-breadcrumb" aria-label="breadcrumb" id="page-breadcrumbs" role="navigation">
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page"><?php echo $queriedObject->post_title; ?></li>
       </ol>
@@ -51,7 +81,7 @@
   <?php $post_type = $queriedObject->post_type; ?>
 
 
-   <nav class="cd-breadcrumb" aria-label="breadcrumb" role="navigation">
+   <nav class="cd-breadcrumb" id="single-post-type-breadcrumbs" aria-label="breadcrumb" role="navigation">
 
      <div class="cd-breadcrumb-top">
 
@@ -71,13 +101,13 @@
              <?php if (  $_GET['t'] == 's' ) : ?>
                <?php $tax = 'services'; ?>
                <a href="<?php bloginfo('url'); ?>/services">Services</a>
+
+             <?php else: ?>
+
+               <?php $tax = 'industries'; ?>
+               <a href="<?php bloginfo('url'); ?>/projects">Industries</a>
+
              <?php endif; ?>
-
-           <?php else: ?>
-
-             <?php $tax = 'industries'; ?>
-             <a href="<?php bloginfo('url'); ?>/projects">Industries</a>
-
            <?php endif; ?>
          </li>
 
@@ -102,7 +132,7 @@
 
      </ol>
 
-     <img id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
+     <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
 
    </div>
 
@@ -138,21 +168,22 @@
     $display_term = $queriedObject->name;
   ?>
 
-  <nav class="cd-breadcrumb" aria-label="breadcrumb" role="navigation">
+  <nav class="cd-breadcrumb" id="taxonomy-term-breadcrumbs" aria-label="breadcrumb" role="navigation">
     <div class="cd-breadcrumb-top">
-
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="<?php bloginfo( 'url' ); ?>/projects">
-          Projects
-        </a>
-      </li>
-      <li class="breadcrumb-item">
+      <?php if ( $taxonomy == 'industries' ) : ?>
+        <li class="breadcrumb-item">
+          <a href="<?php bloginfo( 'url' ); ?>/projects">
+            Projects
+          </a>
+        </li>
+      <?php endif; ?>
+      <li class="breadcrumb-item" id="taxonomy-breadcrumb">
         <a href="<?php bloginfo( 'url' ); ?>/<?php echo $taxObject->name; ?>">
           <?php echo $display_tax; ?>
         </a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">
+      <li class="breadcrumb-item active" id="taxonomy-term-breadcrumb" aria-current="page">
         <?php echo $display_term; ?>
       </li>
     </ol>

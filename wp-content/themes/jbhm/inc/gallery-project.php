@@ -1,12 +1,11 @@
 <?php
-//TODO: "cd-gallery" as a selector is gone. Replace "cd-gallery" settings in cd.js and style.css and then change all "cd-gallery" to "cd-gallery".
   $gallery = get_field( 'gallery' );
 
 ?>
 
 <?php if ( $gallery ) : ?>
 
-  <div class="cd-gallery">
+  <div class="cd-gallery mt-5">
 
     <div class="cd-gallery-sizer"></div>
 

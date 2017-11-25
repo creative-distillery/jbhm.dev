@@ -118,7 +118,9 @@ li {
   stroke: #6BA443;
 }
 
-
+blockquote.blockquote {
+  font-size: 2rem;
+}
 /*----------------------------------------------*/
 /*---------------     Layout     ---------------*/
 /*----------------------------------------------*/
@@ -359,7 +361,10 @@ body {
   border-radius: 0px;
   margin: 0;
 }
-
+.breadcrumb-item+.breadcrumb-item::before {
+  padding-left: .2rem;
+  padding-right: .2rem;
+}
 .breadcrumb-item > a {
   color: #5A5957;
 }
@@ -381,6 +386,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 
 .breadcrumb-industry-list {
   display: none;
