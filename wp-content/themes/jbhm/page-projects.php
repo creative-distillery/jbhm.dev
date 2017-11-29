@@ -24,8 +24,6 @@
 
           <a href="../industries/<?php echo $term->slug; ?>">
 
-<?php //TODO: change to h3, and closer to match the "arial" font on projects page, but with correct font. ?>
-
           <div class="cd-grid-inner" style="background-image: url(<?php echo $img['sizes']['thumbnail']; ?>)">
 
               <div class="cd-grid-content">

@@ -238,6 +238,7 @@ body {
   border: 0px;
   cursor: pointer;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .cd-gallery-wide {
@@ -284,7 +285,6 @@ body {
   background-position: center;
 }
 
-
 .frontpage-project-info {
   display: flex;
   flex-direction: column;
@@ -297,6 +297,7 @@ body {
   /*padding-bottom: .5rem;*/
   text-align: left;
 }
+
 .frontpage-project-info h3,
 .frontpage-project-info h4,
 .frontpage-project-info p {
@@ -332,6 +333,14 @@ body {
 
   .frontpage-gallery-item:hover .frontpage-project-info {
     opacity: 1;
+  }
+
+  .frontpage-gallery-item img {
+    transition: transform .75s;
+  }
+
+  .frontpage-gallery-item:hover img {
+    transform: scale(1.2);
   }
 
 }
