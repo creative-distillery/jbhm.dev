@@ -22,8 +22,20 @@ jQuery(document).ready(function($) {
   // });
 
   $('#cd_search_start').on('click', function() {
-    $('#cd_search_start').hide();
-    $('#cd_search_form').css('display', 'flex');
+    // When the search icon is clicked, do this:
+    $('#cd_search_start').hide(); // Hide the search icon (icon is replaced by identical icon used as the submit button)
+    $('#cd_search_form').css('display', 'flex'); // Show the search form
+    $('#menu-main-menu').hide('fast', function() { // Hide the menu items so the nav bar doesn't get crowded and funky looking, then...
+      $(document).one('click', function(e){
+        var target = e.target;
+        if (!$(target).is('#cd_search_form') && !$(target).parents().is('#cd_search_form')) {
+          // When anything but the search form is clicked, undo everything.
+          $('#menu-main-menu').show('fast');
+          $('#cd_search_form').css('display', 'none');
+          $('#cd_search_start').show();
+        }
+      })
+    });
   });
 
   $('#breadcrumb_toggle').on('click', function() {

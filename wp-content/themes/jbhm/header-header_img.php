@@ -60,10 +60,10 @@
 
         <nav class="navbar navbar-expand-md cd-nav">
 
-          <a class="navbar-brand w-75 mr-auto" href="<?php bloginfo('url'); ?>">
+          <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>
               <?php $logo = get_field( 'logo', 'option' ); ?>
-              <img class="img-fluid cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+              <img class="w-auto cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
             <?php else: ?>
               <h1><?php bloginfo( 'title' ); ?></h1>
             <?php endif; ?>
@@ -73,12 +73,12 @@
             <i class="fa fa-bars fa-2x"></i>
           </button>
 
-          <div class="collapse navbar-collapse cd-menu" id="main_menu">
+          <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
 
             <?php
               $args = array(
                 'theme_location' => 'header-menu',
-                'menu_class'  => 'navbar-nav nav justify-content-end',
+                'menu_class'  => 'navbar-nav nav justify-content-end align-items-end',
                 'container'   => 'false'
               );
               wp_nav_menu( $args );

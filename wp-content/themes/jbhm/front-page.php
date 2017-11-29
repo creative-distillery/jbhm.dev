@@ -44,7 +44,7 @@
 
     <?php if ( $projectQuery->have_posts() ) : ?>
 
-      <div class="cd-gallery">
+      <div class="cd-gallery" id="frontPageGallery">
 
         <div class="cd-gallery-sizer"></div>
 
@@ -75,18 +75,18 @@
 
           ?>
 
-          <a class="cd-gallery-item" href="<?php the_permalink(); ?>">
+          <a class="cd-gallery-item frontpage-gallery-item" href="<?php the_permalink(); ?>">
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
-            <div class="project-info">
+            <div class="frontpage-project-info">
 
               <div class="text-left w-auto h-size-adjust">
                 <h3><?php the_title(); ?></h3>
                 <hr class="accent">
                 <h4><?php the_field( 'location' ); ?></h4>
               </div>
-              <div class="text-right w-100">
+              <div class="text-right w-100 d-none d-md-block">
                 <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
               </div>
 

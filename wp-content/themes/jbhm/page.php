@@ -7,7 +7,7 @@
 ?>
 
 <div class="row mt-2">
-  <div class="col page-content">
+  <div class="page-content">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <?php the_title( '<h2 class="accent">', '</h2>' ); ?>

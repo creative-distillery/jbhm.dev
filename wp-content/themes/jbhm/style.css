@@ -29,7 +29,7 @@ This theme, like WordPress, is licensed under the GPL.
   -- Services
   -- Projects
   -- People
-  -- Footers
+  -- Footer
   -- Blog
   -- Search
 ------------------------------------------------*/
@@ -275,6 +275,68 @@ body {
 }
 
 
+/*---------------     Front Page Gallery     ---------------*/
+
+
+.frontpage-gallery-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.frontpage-project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  color: black;
+  /*padding-bottom: .5rem;*/
+  text-align: left;
+}
+.frontpage-project-info h3,
+.frontpage-project-info h4,
+.frontpage-project-info p {
+  font-size: .778rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .frontpage-project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(89, 89, 89, .75);
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    padding: 1rem .75rem;
+    /*padding-bottom: .5rem;*/
+    opacity: 0;
+    transition: opacity .75s;
+    text-align: left;
+  }
+
+  .frontpage-project-info h3,
+  .frontpage-project-info h4,
+  .frontpage-project-info p {
+    font-size: 1rem;
+  }
+
+  .frontpage-gallery-item:hover .frontpage-project-info {
+    opacity: 1;
+  }
+
+}
+
+
 /*-----------------------------------------------*/
 /*---------------     HEADERS     ---------------*/
 /*-----------------------------------------------*/
@@ -345,6 +407,10 @@ body {
   display: block;
   font-size: 26px;
   font-weight: light;
+}
+
+#cd_search_start:hover {
+  cursor: pointer;
 }
 
 #cd_search_form {
@@ -425,8 +491,9 @@ body {
 /*------------------------------------------*/
 
 .page-content {
-  width: 400px;
+  width: 900px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 /*------------------------------------------------*/
@@ -653,6 +720,7 @@ span.award-name {
   background-color: #EEEEEE;
   margin-top: 1rem;
   padding-top: 20px;
+  font-size: .9rem;
 }
 
 .cd-footer-col {

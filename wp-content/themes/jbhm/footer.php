@@ -1,6 +1,6 @@
       <div class="row cd-footer">
 
-        <div class="col-12 col-md-4 cd-footer-col">
+        <div class="col-12 col-md-3 col-lg-4 cd-footer-col">
           <div class="text-md-center">
           	<div class="d-inline-block text-left">
               <?php dynamic_sidebar( 'footer-left' ); ?>
@@ -8,7 +8,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-2 cd-footer-col">
+        <div class="col-12 col-md-3 col-lg-2 cd-footer-col">
           <div class="text-md-center">
           	<div class="d-inline-block text-left">
               <?php get_sidebar( 'footer_left_center' ); ?>
@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-2 cd-footer-col quick-links-container">
+        <div class="col-12 col-md-3 col-lg-2 cd-footer-col quick-links-container">
           <div class="text-md-center">
           	<div class="d-inline-block text-left">
               <?php get_sidebar( 'footer_right_center' ); ?>
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-4 cd-copyright text-md-center cd-footer-col">
+        <div class="col-12 col-md-3 col-lg-4 cd-copyright text-md-center cd-footer-col">
           <?php get_sidebar( 'footer_right' ); ?>
         </div>
 
