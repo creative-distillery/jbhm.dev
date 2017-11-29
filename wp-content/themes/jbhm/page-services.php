@@ -23,13 +23,19 @@
         <div class="cd-grid-item">
 
           <a href="../services/<?php echo $term->slug; ?>">
-            <div class="cd-grid-inner" style="background-image: url(<?php echo $img['sizes']['thumbnail']; ?>)">
+            <div class="cd-grid-parent">
+              <div class="cd-grid-inner" style="background-image: url(<?php echo $img['sizes']['thumbnail']; ?>)">
 
-              <div class="cd-grid-content">
+                <div class="cd-grid-content d-none d-md-flex">
+                  <h3><?php echo $term->name; ?></h3>
+                  <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+                </div>
+
+              </div>
+              <div class="cd-grid-mobile-content d-flex d-md-none">
                 <h3><?php echo $term->name; ?></h3>
                 <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
               </div>
-
             </div>
           </a>
 
