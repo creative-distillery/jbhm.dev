@@ -258,7 +258,7 @@ body {
 }
 
 /* Large screen gallery */
-@media screen and (min-width: 992px) {
+/*@media screen and (min-width: 992px) {
 
   .cd-gallery-sizer,
   .cd-gallery-item {
@@ -268,7 +268,7 @@ body {
   .cd-gallery-wide {
     width: 49%;
   }
-}
+}*/
 
 .cd-grid-content > h3 {
   text-transform: uppercase;
