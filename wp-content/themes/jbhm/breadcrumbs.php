@@ -50,7 +50,6 @@
     </div>
 
     <ul id="industry_list" class="list-unstyled breadcrumb-industry-list" data-expanded="false">
-      <?php print_r($queriedObject); ?>
       <?php
          $industries = get_terms(
            array(
