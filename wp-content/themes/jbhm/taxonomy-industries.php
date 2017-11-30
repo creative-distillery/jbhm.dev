@@ -6,21 +6,6 @@
 
   get_header();
 
-  $az = true;
-  $recent = false;
-
-  if ( isset( $_GET['orderby'] ) ) {
-      switch ( $_GET['orderby'] ) {
-        case 'name':
-          break;
-        case 'date':
-          $filter = 'date';
-          $az = false;
-          $recent = true;
-          break;
-      }
-  }
-
 ?>
 
 <?php $currentTerm = get_queried_object(); ?>
@@ -28,8 +13,7 @@
 <div class="row">
   <div class="industry-title-wrap">
     <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
-    <a class="btn people-filter-btn<?php if ( $az ) : ?> active-filter<?php endif; ?>" href="?orderby=name&order=ASC">A-Z</a>
-    <a class="btn people-filter-btn<?php if ( $recent ) : ?> active-filter<?php endif; ?>" href="?orderby=date">Most Recent</a>
+    
   </div>
 </div>
 
