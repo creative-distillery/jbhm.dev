@@ -20,7 +20,7 @@
         <?php $acf_term_id = 'services_' . $term->term_id; ?>
         <?php $img = get_field( 'image', $acf_term_id ); ?>
 
-        <div class="cd-grid-item">
+        <div class="cd-grid-item col-12 col-sm-6 col-md-4 col-xl-3">
 
           <a href="../services/<?php echo $term->slug; ?>">
             <div class="cd-grid-parent">
@@ -40,8 +40,6 @@
           </a>
 
         </div>
-
-
 
       <?php endforeach; ?>
 
