@@ -78,7 +78,7 @@
 <?php if ( is_single() && ! is_page() ) :?>
 
   <?php $post_type = $queriedObject->post_type; ?>
-
+  <?php $noTax = false; ?>
 
    <nav class="cd-breadcrumb" id="single-post-type-breadcrumbs" aria-label="breadcrumb" role="navigation">
 
@@ -120,11 +120,16 @@
            </li>
          <?php endif; ?>
 
-       <?php elseif ( $post_type == 'post' ) :
-         $newsPage = true;?>
+       <?php elseif ( $post_type == 'post' ) : ?>
+
          <li class="breadcrumb-item"><a href="../news">News</a></li>
+         <?php $noTax = true; ?>
+
       <?php elseif ( $post_type == 'person' ) : ?>
+
         <li class="breadcrumb-item"><a href="../people">People</a></li>
+        <?php $noTax = true; ?>
+
       <?php endif; ?>
 
       <li class="breadcrumb-item active" aria-current="page"><?php echo $queriedObject->post_title; ?></li>
@@ -134,11 +139,11 @@
 
      </ol>
 
-<?php if ( ! $newsPage ) : ?>
+<?php if ( ! $noTax ) : ?>
      <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
 <?php endif; ?>
    </div>
-<?php if ( ! $newsPage ) : ?>
+<?php if ( ! $noTax ) : ?>
    <ul id="industry_list" class="list-unstyled breadcrumb-industry-list" data-expanded="false">
      <?php
         $taxterms = get_terms(

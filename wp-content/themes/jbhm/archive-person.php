@@ -46,7 +46,7 @@
     <div class="d-flex flex-wrap align-items-center my-3">
 
       <h2 class="accent mb-0">People</h2>
-      
+
       <div>
         <a class="btn people-filter-btn<?php if ($all) : ?> active-filter<?php endif; ?>" href="?p=All" id="filter_all">All</a>
         <a class="btn people-filter-btn<?php if ($principals) : ?> active-filter<?php endif; ?>" href="?p=Principals" id="filter_principals">Principals</a>
@@ -65,7 +65,7 @@
 
           <?php $headshot = get_field( 'headshot' ); ?>
 
-          <a class="cd-grid-item col-12 col-sm-6 col-md-4 col-xl-3">
+          <a class="cd-grid-item col-12 col-sm-6 col-md-4 col-xl-3" href="<?php the_permalink(); ?>">
 
             <img class="img-fluid" src="<?php echo $headshot['sizes']['thumbnail']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
 

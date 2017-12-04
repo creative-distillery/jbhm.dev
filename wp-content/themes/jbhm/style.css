@@ -181,6 +181,13 @@ body {
   text-decoration: none;
   overflow: hidden;
 }
+
+
+.h-300 {
+  height: 300px;
+}
+
+
 .cd-grid-item:hover > img {
   transition: .5s ease-in-out;
   transform: scale(1.1);
@@ -704,7 +711,20 @@ body {
   display: inline;
   vertical-align: middle;
 }
-
+.tax-grid-item {
+  height: 300px;
+  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tax-grid-item > img {
+  min-height: 100%;
+  width: auto;
+  max-width: auto;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
 
 /*----------   Industry Projects Page   ---------*/
 /*--------   (taxonomy-industries.php)   --------*/
