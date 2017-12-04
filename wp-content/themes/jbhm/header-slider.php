@@ -30,41 +30,41 @@
       }
     ?>
 
-      <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel slide" data-ride="carousel">
+    <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel slide" data-ride="carousel">
 
-        <ol class="carousel-indicators">
-          <?php $i = 0; ?>
-          <?php foreach ( $sliders as $indicator ) : ?>
-            <li data-target="#header_carousel_<?php echo $post->ID; ?>" data-slide-to="<?php echo $i; ?>"<?php if ( $i == 0 ) :?> class="active"<?php endif; ?>></li>
-            <?php $i++; ?>
-          <?php endforeach; ?>
-        </ol>
+      <ol class="carousel-indicators">
+        <?php $i = 0; ?>
+        <?php foreach ( $sliders as $indicator ) : ?>
+          <li data-target="#header_carousel_<?php echo $post->ID; ?>" data-slide-to="<?php echo $i; ?>"<?php if ( $i == 0 ) :?> class="active"<?php endif; ?>></li>
+          <?php $i++; ?>
+        <?php endforeach; ?>
+      </ol>
 
-        <div class="carousel-inner">
-          <?php $i = 0; ?>
-          <?php foreach ( $sliders as $image ) : ?>
-            <div class="carousel-item<?php if ( $i == 0 ) : ?> active<?php endif; ?>" data-height="<?php echo $image['height']; ?>">
-              <img class="d-block w-100 img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-            </div>
-            <?php $i++; ?>
-          <?php endforeach; ?>
-        </div>
-        <a class="carousel-control-prev" href="#header_carousel_<?php echo $post->ID; ?>" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#header_carousel_<?php echo $post->ID; ?>" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+      <div class="carousel-inner">
+        <?php $i = 0; ?>
+        <?php foreach ( $sliders as $image ) : ?>
+          <div class="carousel-item<?php if ( $i == 0 ) : ?> active<?php endif; ?>" data-height="<?php echo $image['height']; ?>">
+            <img class="d-block w-100 img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+          </div>
+          <?php $i++; ?>
+        <?php endforeach; ?>
+      </div>
+      <a class="carousel-control-prev" href="#header_carousel_<?php echo $post->ID; ?>" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#header_carousel_<?php echo $post->ID; ?>" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
 
-        <div class="cd-slider-nav">
+      <div class="cd-slider-nav">
         <nav class="navbar navbar-expand-md cd-nav">
 
-          <a class="navbar-brand w-75 mr-auto" href="<?php bloginfo('url'); ?>">
+          <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>
               <?php $logo = get_field( 'logo', 'option' ); ?>
-              <img class="img-fluid cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+              <img class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
             <?php else: ?>
               <h1><?php bloginfo( 'title' ); ?></h1>
             <?php endif; ?>
@@ -74,35 +74,26 @@
             <i class="fa fa-bars fa-2x"></i>
           </button>
 
-          <div class="collapse navbar-collapse cd-menu" id="main_menu">
+          <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
 
             <?php
-
               $args = array(
                 'theme_location' => 'header-menu',
-                'menu_class'  => 'navbar-nav nav justify-content-end',
+                'menu_class'  => 'navbar-nav nav align-items-end',
                 'container'   => 'false'
               );
               wp_nav_menu( $args );
+            ?>
 
-               ?>
-
-               <i id="cd_search_start" class="fa fa-search fa-2x ml-2 accent"></i>
-
-
-               <form id="cd_search_form" method="get" action="<?php echo home_url(); ?>">
-
-                 <input id="search_box" class="form-control" type="text" name="s">
-
-                 <i type="submit" id="cd_search" class="fa fa-search fa-2x ml-2 accent"></i>
-
-               </form>
+             <i class="fa fa-search fa-2x ml-2 accent" data-toggle="modal" data-target="#searchForm"></i>
 
           </div>
+
         </nav>
 
         <?php get_template_part( 'breadcrumbs' ); ?>
-</div>
-      </div><!-- .carousel -->
 
-      <div class="container-fluid">
+      </div><!-- .cd-slider-nav -->
+    </div><!-- .carousel -->
+
+    <div class="container-fluid">
