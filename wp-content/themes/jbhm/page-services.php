@@ -23,16 +23,15 @@
 
           <a class="cd-grid-item tax-grid-item col-12 col-sm-6 col-md-4 col-xl-3" href="../services/<?php echo $term->slug; ?>">
 
-            <img style="" src="<?php echo $img['sizes']['thumbnail']; ?>"/>
-
-                <div class="cd-grid-inner">
+            <div class="img">
+              <img src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>"/>
+            </div>
 
                   <div class="cd-grid-content d-none d-md-flex">
                     <h3><?php echo $term->name; ?></h3>
                     <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
                   </div>
 
-                </div>
                 <div class="cd-grid-mobile-content d-flex d-md-none">
                   <h3><?php echo $term->name; ?></h3>
                   <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>

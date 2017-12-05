@@ -11,6 +11,7 @@
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/dist/css/lightbox.min.css' );
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'cd_grid', get_template_directory_uri() . '/assets/css/grid.css' );
   }
 
   function cd_theme_scripts() {

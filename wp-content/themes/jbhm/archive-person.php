@@ -58,7 +58,7 @@
 </div>
 
 
-    <div class="row mb-4">
+    <div class="row cd-people-grid">
 
 
         <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -67,17 +67,17 @@
 
           <a class="cd-grid-item col-12 col-sm-6 col-md-4 col-xl-3" href="<?php the_permalink(); ?>">
 
-            <img class="img-fluid" src="<?php echo $headshot['sizes']['thumbnail']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
+            <div class="img">
+              <img class="img-fluid" src="<?php echo $headshot['sizes']['thumbnail']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
+            </div>
 
-              <div class="cd-grid-inner">
 
-                <div class="cd-grid-content-person h-size-adjust">
-                  <h3><?php the_title(); ?></h3>
-                  <hr class="accent">
-                  <h4><?php the_field( 'position' ); ?></h4>
-                </div>
+            <div class="cd-grid-content-person h-size-adjust">
+              <h3><?php the_title(); ?></h3>
+              <hr class="accent">
+              <h4><?php the_field( 'position' ); ?></h4>
+            </div>
 
-              </div>
 
           </a>
 
