@@ -51,10 +51,22 @@ jQuery(document).ready(function($) {
 
   });
 
+// initialize lightbox
   lightbox.option({
        'resizeDuration': 200,
        'wrapAround': true
      });
+
+// initialize flickity
+   $('.fl-main-carousel').flickity({
+   // options
+   cellAlign: 'left',
+   contain: true,
+   imagesLoaded: true,
+   adaptiveHeight: true,
+   autoPlay: 5000,
+   wrapAround: true
+ });
 
 }); //document.ready
 
