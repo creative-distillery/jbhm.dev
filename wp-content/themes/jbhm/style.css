@@ -292,11 +292,23 @@ body {
 }
 
 
-.carousel-inner {
+.fl-main-carousel {
   max-height: 100vh;
 }
 
+.admin-bar .fl-main-carousel {
+  max-height: 95vh;
+}
+
 .fl-carousel-cell {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fl-carousel-cell img {
   width: 100%;
   height: auto;
 }
