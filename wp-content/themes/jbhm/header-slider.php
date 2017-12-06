@@ -62,34 +62,19 @@
       <?php get_template_part( 'breadcrumbs' ); ?>
     </div><!-- .cd-slider-nav -->
 
-    <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel slide" data-ride="carousel">
+    <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel">
 
 
-      <ol class="carousel-indicators">
-        <?php $i = 0; ?>
-        <?php foreach ( $sliders as $indicator ) : ?>
-          <li data-target="#header_carousel_<?php echo $post->ID; ?>" data-slide-to="<?php echo $i; ?>"<?php if ( $i == 0 ) :?> class="active"<?php endif; ?>></li>
-          <?php $i++; ?>
-        <?php endforeach; ?>
-      </ol>
-
-      <div class="carousel-inner">
+      <div class="fl-main-carousel">
         <?php $i = 0; ?>
         <?php foreach ( $sliders as $image ) : ?>
-          <div class="carousel-item<?php if ( $i == 0 ) : ?> active<?php endif; ?>" data-height="<?php echo $image['height']; ?>">
-            <img class="d-block w-100 img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+          <div class="fl-carousel-cell">
+            <img class="img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
           </div>
           <?php $i++; ?>
         <?php endforeach; ?>
       </div>
-      <a class="carousel-control-prev" href="#header_carousel_<?php echo $post->ID; ?>" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#header_carousel_<?php echo $post->ID; ?>" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+
 
 
     </div><!-- .carousel -->
