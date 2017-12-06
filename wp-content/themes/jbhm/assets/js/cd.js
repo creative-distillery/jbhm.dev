@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
 // initialize flickity
    $('.fl-main-carousel').flickity({
    // options
-   cellAlign: 'left',
+   cellAlign: 'center',
    contain: true,
    imagesLoaded: true,
    adaptiveHeight: true,
