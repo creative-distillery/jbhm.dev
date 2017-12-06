@@ -454,6 +454,15 @@ body {
   .cd-breadcrumb {
     display: none;
   }
+  .breadcrumb {
+    display: none;
+  }
+  .cd-breadcrumb-top {
+    display: none;
+  }
+  .breadcrumb-industry-list {
+    display: none;
+  }
 }
 
 .cd-breadcrumb-top {
