@@ -54,7 +54,8 @@ jQuery(document).ready(function($) {
 // initialize lightbox
   lightbox.option({
        'resizeDuration': 200,
-       'wrapAround': true
+       'wrapAround': true,
+       'disableScrolling': true
      });
 
 // initialize flickity

@@ -94,23 +94,22 @@
 
          <li class="breadcrumb-item"><a href="../projects">Projects</a></li>
 
-         <li class="breadcrumb-item">
            <?php if ( isset( $_GET['t'] ) ) : ?>
 
              <?php if (  $_GET['t'] == 's' ) : ?>
                <?php $tax = 'services'; ?>
-               <a href="<?php bloginfo('url'); ?>/services">Services</a>
-
+               <li class="breadcrumb-item">
+                 <a href="<?php bloginfo('url'); ?>/services">Services</a>
+               </li>
              <?php else: ?>
-
                <?php $tax = 'industries'; ?>
-               <a href="<?php bloginfo('url'); ?>/projects">Industries</a>
-
+               <li class="breadcrumb-item">
+                 <a href="<?php bloginfo('url'); ?>/projects">Industries</a>
+               </li>
              <?php endif; ?>
            <?php else: ?>
              <!-- NO 'T' QUERY PARAM -->
            <?php endif; ?>
-         </li>
 
          <?php if ( isset( $_GET['o'] ) ) : ?>
            <?php $termID = $_GET['o']; ?>

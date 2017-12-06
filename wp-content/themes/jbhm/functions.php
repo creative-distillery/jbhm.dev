@@ -149,5 +149,3 @@
   ;
     return $i + 1;
   }
-
-  include_once( get_stylesheet_directory() . '/inc/breadcrumbs.php' );

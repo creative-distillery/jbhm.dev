@@ -663,6 +663,10 @@ body {
   font-size: 55%;
 }
 
+.lightbox .lb-image {
+  border: 0px;
+}
+
 /*------------ Industry Archive Page ------------*/
 /*------------- (page-projects.php) -------------*/
 
