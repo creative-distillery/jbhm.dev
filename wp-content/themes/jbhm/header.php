@@ -15,7 +15,8 @@
 
   <body <?php body_class(); ?>>
 
-        <nav class="navbar navbar-expand-md cd-nav">
+        <nav class="navbar navbar-expand-md cd-nav" id="cd_header">
+
 
           <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>
@@ -44,6 +45,9 @@
                <i class="fa fa-search fa-2x ml-2 accent" data-toggle="modal" data-target="#searchForm"></i>
 
           </div>
+
+
+
         </nav>
 
         <?php get_template_part( 'breadcrumbs' ); ?>

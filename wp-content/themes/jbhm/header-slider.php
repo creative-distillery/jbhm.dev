@@ -59,7 +59,7 @@
       </a>
 
       <div class="cd-slider-nav">
-        <nav class="navbar navbar-expand-md cd-nav">
+        <nav class="navbar navbar-expand-md cd-nav" id="cd_header_slider">
 
           <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>

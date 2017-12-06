@@ -60,7 +60,7 @@
 
       <div class="header-img">
 
-        <nav class="navbar navbar-expand-md cd-nav">
+        <nav class="navbar navbar-expand-md cd-nav" id="cd_header_img">
 
           <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>
