@@ -319,11 +319,11 @@ body {
       -ms-flex: 1 2;
           flex: 1 2;
 }
-.cd-nav > .cd-menu {
+/*.cd-nav > .cd-menu {
   -webkit-box-flex: 2;
       -ms-flex: 2 1;
           flex: 2 1;
-}
+}*/
 
 #menu-main-menu {
   -ms-flex-pack: distribute;
@@ -337,7 +337,7 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  max-width: 100%;
+  /*max-width: 100%;*/
 }
 
 .cd-menu > ul {
