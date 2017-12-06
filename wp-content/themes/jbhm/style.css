@@ -285,10 +285,12 @@ body {
 /*-----------------------------------------------*/
 
 .cd-slider-nav {
-  position: absolute;
+  /*position: absolute;
   top: 0;
-  width: 100%;
+  width: 100%;*/
+  z-index: 10;
 }
+
 
 .carousel-inner {
   max-height: 100vh;
@@ -306,6 +308,21 @@ body {
 @media screen and (min-width: 768px) {
   .cd-logo {
     height: 80px;
+  }
+
+  .cd-slider-nav > nav.cd-nav {
+    background-color: rgba(55, 55, 55, .6);
+    z-index: 10;
+  }
+
+  .cd-slider-nav {
+    position: absolute;
+    /*top: 0;*/
+    z-index: 1;
+    width: 100%;
+  }
+  .admin-bar .cd-slider-nav {
+
   }
 }
 
@@ -450,7 +467,7 @@ body {
   padding-right: 1rem;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .cd-breadcrumb {
     display: none;
   }

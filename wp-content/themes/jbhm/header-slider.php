@@ -10,11 +10,6 @@
 
     <?php wp_head(); ?>
 
-    <style>
-      nav.cd-nav {
-        background-color: rgba(55, 55, 55, .6);
-      }
-    </style>
 
   </head>
 
@@ -30,7 +25,45 @@
       }
     ?>
 
+    <div class="cd-slider-nav">
+
+      <nav class="navbar navbar-expand-md cd-nav" id="cd_header_slider">
+
+        <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
+          <?php if ( get_field( 'logo', 'option' ) ) : ?>
+            <?php $logo = get_field( 'logo', 'option' ); ?>
+            <img class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+          <?php else: ?>
+            <h1><?php bloginfo( 'title' ); ?></h1>
+          <?php endif; ?>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
+          <i class="fa fa-bars fa-2x"></i>
+        </button>
+
+        <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
+
+          <?php
+            $args = array(
+              'theme_location' => 'header-menu',
+              'menu_class'  => 'navbar-nav nav align-items-end',
+              'container'   => 'false'
+            );
+            wp_nav_menu( $args );
+          ?>
+
+           <i class="fa fa-search fa-2x ml-2 accent" data-toggle="modal" data-target="#searchForm"></i>
+
+        </div>
+
+      </nav>
+
+      <?php get_template_part( 'breadcrumbs' ); ?>
+    </div><!-- .cd-slider-nav -->
+
     <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel slide" data-ride="carousel">
+
 
       <ol class="carousel-indicators">
         <?php $i = 0; ?>
@@ -58,42 +91,8 @@
         <span class="sr-only">Next</span>
       </a>
 
-      <div class="cd-slider-nav">
-        <nav class="navbar navbar-expand-md cd-nav" id="cd_header_slider">
 
-          <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
-            <?php if ( get_field( 'logo', 'option' ) ) : ?>
-              <?php $logo = get_field( 'logo', 'option' ); ?>
-              <img class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
-            <?php else: ?>
-              <h1><?php bloginfo( 'title' ); ?></h1>
-            <?php endif; ?>
-          </a>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
-            <i class="fa fa-bars fa-2x"></i>
-          </button>
-
-          <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
-
-            <?php
-              $args = array(
-                'theme_location' => 'header-menu',
-                'menu_class'  => 'navbar-nav nav align-items-end',
-                'container'   => 'false'
-              );
-              wp_nav_menu( $args );
-            ?>
-
-             <i class="fa fa-search fa-2x ml-2 accent" data-toggle="modal" data-target="#searchForm"></i>
-
-          </div>
-
-        </nav>
-
-        <?php get_template_part( 'breadcrumbs' ); ?>
-
-      </div><!-- .cd-slider-nav -->
     </div><!-- .carousel -->
+
 
     <div class="container-fluid">
