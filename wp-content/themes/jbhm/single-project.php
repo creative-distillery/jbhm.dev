@@ -25,6 +25,12 @@
 
 ?>
 
+<?php $browser_info = php_browser_info(); ?>
+
+<?php if ( $browser_info['Browser'] != 'IE' && $browser_info['Version'] >= 10.0  ) : ?>
+  This is Not IE 9 or below.
+<?php endif; ?>
+
 <div class="project-content-wrap">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -112,7 +118,7 @@
       </div>
 
     <?php endif; ?>
-    
+
     <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
       <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous Project' ); ?>
       <?php next_post_link( '<p class="blog-nav-link">%link</p>', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
