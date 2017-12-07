@@ -10,6 +10,9 @@
   <div class="page-content">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+      <?php if ( is_ie() && get_browser_version() < 10.0 ) {
+        echo 'IE 9 or less';
+      } ?>
     <?php the_title( '<h2 class="accent my-4">', '</h2>' ); ?>
 
     <?php the_content() ?>

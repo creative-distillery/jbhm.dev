@@ -25,11 +25,6 @@
 
 ?>
 
-<?php $browser_info = php_browser_info(); ?>
-
-<?php if ( $browser_info['Browser'] != 'IE' && $browser_info['Version'] >= 10.0  ) : ?>
-  This is Not IE 9 or below.
-<?php endif; ?>
 
 <div class="project-content-wrap">
 
