@@ -53,6 +53,12 @@
 
     </ol>
 
+    <?php
+      if ( is_ie() && get_browser_version() < 10.0 ) {
+        $noTax = true;
+      }
+    ?>
+    
     <?php if ( ! $noTax ) : ?>
       <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
     <?php endif; ?>
