@@ -29,13 +29,15 @@
 
     $query = new WP_Query( array(
       'post_type' => 'person',
+      'order' => 'ASC',
       'category_name' => $filter
     ) );
 
   } else {
 
     $query = new WP_Query( array(
-      'post_type' => 'person'
+      'post_type' => 'person',
+      'order' => 'ASC'
     ) );
   }
 
