@@ -48,10 +48,6 @@ font-family: "acumin-pro", Arial, sans-serif;
 color: #4A4A4A;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-
-}
-
 .home p {
   margin-bottom: 0px;
 }
@@ -72,7 +68,6 @@ h4 {
 }
 
 /*Goes on containing element*/
-
 .h-size-adjust {
   font-size: .83rem;
 }
@@ -308,6 +303,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .fl-carousel-cell img {
   width: 100%;
   height: auto;
@@ -322,6 +318,7 @@ body {
   bottom: 0px;
   margin-bottom: 1rem;
 }
+
 /* white circles */
 .flickity-page-dots .dot {
   width: 12px;
@@ -330,6 +327,7 @@ body {
   background: transparent;
   border: 2px solid white;
 }
+
 /* fill-in selected dot */
 .flickity-page-dots .dot.is-selected {
   background: white;

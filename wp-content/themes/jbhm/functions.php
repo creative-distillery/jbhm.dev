@@ -58,9 +58,7 @@
 /* Setup widget location */
 
   cd_create_widget( 'Footer Left', 'footer-left', 'Displays in the far left of the footer.' );
-  cd_create_widget( 'Footer Left-Center', 'footer-left-center', 'Displays in the center-left of the footer.' );
-  cd_create_widget( 'Footer Right-Center', 'footer-right-center', 'Displays in the center-right of the footer.' );
-
+  
   function cd_create_widget( $name, $id, $description ) {
   	register_sidebar(array(
   		'name' => __( $name ),
@@ -72,9 +70,6 @@
   		'after_title' => '</h3>'
   	));
   }
-
-/* Include Custom Post Types */
-//include_once( get_stylesheet_directory() . '/inc/cpt.php' );
 
 /* Setup ACF */
 
@@ -92,87 +87,6 @@
       return $dir;
   }
 
-/* Hide ACF admin area in backend */
-
-  // add_filter('acf/settings/show_admin', '__return_false');
-
   include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
-  //
+
   acf_add_options_page();
-  //
-  // include_once( get_stylesheet_directory() . '/inc/fields.php' );
-
-
-
-
-  function round_up($number, $precision = 0) {
-    $fig = (int) str_pad('1', $precision, '0');
-    return (ceil($number * $fig) / $fig);
-  }
-
-  function five_col($i) {
-    while ( $i > 4 ) {
-      $i -= 5;
-    }
-  ;
-    return $i + 1;
-  }
-
-  function four_col($i) {
-    while ( $i > 3 ) {
-      $i -= 4;
-    }
-  ;
-    return $i + 1;
-  }
-
-  function three_col($i) {
-    while ( $i > 2 ) {
-      $i -= 3;
-    }
-  ;
-    return $i + 1;
-  }
-
-  function two_col($i) {
-    while ( $i > 1 ) {
-      $i -= 2;
-    }
-  ;
-    return $i + 1;
-  }
-
-  function one_col($i) {
-    while ( $i > 0 ) {
-      $i -= 1;
-    }
-  ;
-    return $i + 1;
-  }
-
-// add os and browser info to body classes
-// function mv_browser_body_class($classes) {
-//   global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-//   if($is_lynx) $classes[] = 'lynx';
-//   elseif($is_gecko) $classes[] = 'gecko';
-//   elseif($is_opera) $classes[] = 'opera';
-//   elseif($is_NS4) $classes[] = 'ns4';
-//   elseif($is_safari) $classes[] = 'safari';
-//   elseif($is_chrome) $classes[] = 'chrome';
-//   elseif($is_IE) {
-//           $classes[] = 'ie';
-//           if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version))
-//           $classes[] = 'ie'.$browser_version[1];
-//   } else $classes[] = 'unknown';
-//   if($is_iphone) $classes[] = 'iphone';
-//   if ( stristr( $_SERVER['HTTP_USER_AGENT'],"mac") ) {
-//            $classes[] = 'osx';
-//      } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"linux") ) {
-//            $classes[] = 'linux';
-//      } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"windows") ) {
-//            $classes[] = 'windows';
-//      }
-//   return $classes;
-// }
-//
-// add_filter('body_class','mv_browser_body_class');

@@ -66,12 +66,10 @@
 
 
       <div class="fl-main-carousel">
-        <?php $i = 0; ?>
         <?php foreach ( $sliders as $image ) : ?>
           <div class="fl-carousel-cell">
             <img class="img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
           </div>
-          <?php $i++; ?>
         <?php endforeach; ?>
       </div>
 

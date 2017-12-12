@@ -33,7 +33,7 @@
       <?php // Output and link back to the current Taxonomy.
             // e.g. "Industries" (Projects page) or "Services". ?>
       <li class="breadcrumb-item" id="taxonomy-breadcrumb">
-        <a href="<?php bloginfo( 'url' ); ?>/<?php echo $taxObject->name; ?>">
+        <a href="<?php bloginfo( 'url' ); ?>/<?php if ( $taxonomy == 'industries' ) : ?>projects<?php else: echo $taxObject->name; endif;?>">
           <?php echo $display_tax; ?>
         </a>
       </li>
