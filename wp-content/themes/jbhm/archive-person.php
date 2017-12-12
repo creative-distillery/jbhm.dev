@@ -30,14 +30,16 @@
     $query = new WP_Query( array(
       'post_type' => 'person',
       'order' => 'ASC',
-      'category_name' => $filter
+      'category_name' => $filter,
+      'posts_per_page' => -1
     ) );
 
   } else {
 
     $query = new WP_Query( array(
       'post_type' => 'person',
-      'order' => 'ASC'
+      'order' => 'ASC',
+      'posts_per_page' => -1
     ) );
   }
 
